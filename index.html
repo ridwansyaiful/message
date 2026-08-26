@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Surprise 🎁</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(135deg,#ffdde1,#ee9ca7);display:grid;place-items:center;overflow:hidden;color:#5a2030}
+.card{width:min(92%,520px);padding:38px 28px;text-align:center;background:rgba(255,255,255,.9);border-radius:28px;box-shadow:0 20px 60px rgba(80,20,40,.2);position:relative}
+h1{font-size:clamp(32px,8vw,52px);margin:8px 0 12px}p{font-size:18px;line-height:1.6}
+button{border:0;border-radius:999px;padding:14px 24px;font-size:17px;font-weight:700;background:#e94f75;color:white;cursor:pointer;box-shadow:0 8px 20px #e94f7555}
+#message{display:none;margin-top:24px;animation:pop .6s ease}
+.heart{position:fixed;font-size:24px;animation:fall linear forwards;top:-40px;pointer-events:none}
+@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="card">
+<div style="font-size:64px">🎁</div>
+<h1>Surprise!</h1>
+<p>Ada pesan kecil khusus untuk kamu.</p>
+<button onclick="openMsg()">Buka Pesannya 💖</button>
+<div id="message">
+<h2>🎉 Selamat Ulang Tahun! 🎂</h2>
+<p>Semoga di umur yang baru ini kamu selalu diberi kesehatan, kebahagiaan, dan banyak hal baik.</p>
+<p>Semoga semua harapan dan impianmu satu per satu menjadi kenyataan. ✨</p>
+<p><b>Have a wonderful birthday! ❤️</b></p>
+</div>
+</div>
+<script>
+function openMsg(){
+ document.getElementById('message').style.display='block';
+ for(let i=0;i<35;i++){
+  const x=document.createElement('div'); x.className='heart';
+  x.textContent=['💖','💕','❤️','✨','🎉'][Math.floor(Math.random()*5)];
+  x.style.left=Math.random()*100+'vw';
+  x.style.animationDuration=(3+Math.random()*4)+'s';
+  x.style.fontSize=(18+Math.random()*24)+'px';
+  document.body.appendChild(x);
+  setTimeout(()=>x.remove(),8000);
+ }
+}
+</script>
+</body>
+</html>
