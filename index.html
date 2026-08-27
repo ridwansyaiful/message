@@ -6,28 +6,20 @@
   <title>Buat Kamu 🐾</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-cream: #FAF3E0;
-      --bg-warm: #FDEED9;
-      --sunset-top: #E9D5DA;
-      --sunset-mid: #FCD8D4;
-      --sunset-bot: #F5EBE6;
       --text-brown: #5C3D2E;
       --btn-brown: #6A4B35;
-      --btn-hover: #543A29;
       --accent-pink: #E58C8A;
-      --card-white: #FFFDF9;
+      /* Warna cat air kapibara dari referensi */
+      --capi-body: #C19A74; 
+      --capi-snout: #A67D5B;
+      --capi-line: #523A28; /* Coklat tua untuk garis mata/hidung */
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      user-select: none;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
 
     body {
       font-family: 'Nunito', sans-serif;
@@ -40,12 +32,12 @@
       padding: 16px;
     }
 
-    /* Container Box */
+    /* Container Utama */
     .storybook-container {
       width: 100%;
       max-width: 580px;
       height: 680px;
-      background: var(--bg-warm);
+      background: #FDEED9; /* Warna dasar hangat */
       border-radius: 28px;
       box-shadow: 0 20px 45px rgba(92, 61, 46, 0.15);
       border: 8px solid #FFF8F0;
@@ -55,347 +47,227 @@
       flex-direction: column;
     }
 
-    /* Slides Wrapper */
-    .slides-wrapper {
-      position: relative;
-      flex: 1;
-      width: 100%;
-      height: 100%;
-    }
-
+    /* Slides & Transisi */
+    .slides-wrapper { position: relative; flex: 1; width: 100%; height: 100%; }
     .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      display: flex; flex-direction: column; justify-content: space-between; align-items: center;
       padding: 40px 28px 24px;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px) scale(0.98);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0; visibility: hidden;
+      transform: translateY(15px);
+      transition: all 0.5s ease-out;
     }
+    .slide.active { opacity: 1; visibility: visible; transform: translateY(0); }
 
-    .slide.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1);
-    }
+    /* Tipografi */
+    h1 { font-size: 2.2rem; font-weight: 800; color: var(--text-brown); margin-bottom: 6px; }
+    p.subtitle { font-size: 1.1rem; font-weight: 600; color: #7D5A44; }
+    .heart-icon { color: var(--accent-pink); animation: heartbeat 1.8s infinite; }
+    @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
-    /* Typography */
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--text-brown);
-      margin-bottom: 6px;
-      line-height: 1.2;
-    }
-
-    p.subtitle {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #7D5A44;
-    }
-
-    .heart-icon {
-      color: var(--accent-pink);
-      display: inline-block;
-      margin: 8px 0;
-      animation: heartbeat 1.8s infinite ease-in-out;
-    }
-
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.15); }
-    }
-
-    /* Common Button */
+    /* Tombol */
     .action-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--btn-brown);
-      color: #FFFFFF;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      box-shadow: 0 6px 14px rgba(106, 75, 53, 0.25);
-      transition: transform 0.2s ease, background 0.2s ease;
-      margin-top: 14px;
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--btn-brown); color: #FFFFFF;
+      font-size: 1rem; font-weight: 700; padding: 12px 28px;
+      border: none; border-radius: 999px; cursor: pointer;
+      box-shadow: 0 5px 12px rgba(106, 75, 53, 0.2);
+      transition: transform 0.2s; margin-top: 14px;
     }
+    .action-btn:hover { background: #543A29; transform: translateY(-2px); }
 
-    .action-btn:hover {
-      background: var(--btn-hover);
-      transform: translateY(-2px);
-    }
-
-    .action-btn:active {
-      transform: translateY(1px);
-    }
-
-    /* Graphic/Illustration Styling (SVG Canvas) */
+    /* Area Ilustrasi SVG */
     .art-container {
-      width: 100%;
-      max-width: 250px;
-      height: 220px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 100%; max-width: 280px; height: 240px;
+      display: flex; justify-content: center; align-items: center;
       margin: 10px 0;
     }
 
-    /* Page-Specific Themes */
-    /* Slide 1 */
-    #slide-1 {
-      background: radial-gradient(circle at 50% 30%, #FFF8EE 0%, #F8E8D4 100%);
-    }
+    /* Definisi Filter SVG untuk Gaya Cat Air */
+    .svg-filter-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
 
-    /* Slide 2 */
-    #slide-2 {
-      background: radial-gradient(circle at 60% 40%, #FFF6EA 0%, #F5E2CC 100%);
-    }
+    /* Gaya Spesifik Halaman */
+    #slide-1 { background: radial-gradient(circle at 50% 40%, #FFFDF9 0%, #F8E8D4 100%); }
+    #slide-2 { background: radial-gradient(circle at 60% 40%, #FFFDF9 0%, #F5E2CC 100%); }
+    #slide-3 { background: #FCEFE3; }
+    #slide-4 { background: linear-gradient(180deg, #DBC1E0 0%, #F6C6B2 50%, #FBE6C2 100%); }
 
-    /* Slide 3 (Sticky Note Card) */
-    #slide-3 {
-      background: #FCEFE3;
-    }
-
+    /* Sticky Note Slide 3 */
     .sticky-note {
-      background: var(--card-white);
-      border-radius: 12px;
-      padding: 24px 22px;
-      max-width: 320px;
-      width: 100%;
-      box-shadow: 0 10px 25px rgba(133, 94, 72, 0.12);
-      border: 1px solid rgba(230, 210, 190, 0.6);
-      position: relative;
-      text-align: center;
-      margin-top: 10px;
+      background: #FFFDF9; border-radius: 12px; padding: 24px 22px;
+      width: 100%; max-width: 320px;
+      box-shadow: 0 10px 25px rgba(133, 94, 72, 0.1);
+      position: relative; text-align: center; margin-top: 10px;
+      font-weight: 600;
     }
-
     .washi-tape {
-      width: 90px;
-      height: 18px;
-      background: rgba(229, 140, 138, 0.5);
-      position: absolute;
-      top: -9px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 3px;
+      width: 90px; height: 18px; background: rgba(229, 140, 138, 0.4);
+      position: absolute; top: -9px; left: 50%; transform: translateX(-50%); border-radius: 3px;
     }
 
-    .sticky-title {
-      color: #E26D5C;
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .sticky-content {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #6C4F3D;
-      font-weight: 600;
-    }
-
-    /* Slide 4 (Sunset Theme) */
-    #slide-4 {
-      background: linear-gradient(180deg, #D4B2D8 0%, #F6C6B2 50%, #FBE6C2 100%);
-    }
-
-    /* Footer & Indicator */
-    .footer-bar {
-      background: #543828;
-      color: #EBD9CE;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-align: center;
-      padding: 10px;
-      letter-spacing: 0.5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .dots-nav {
-      position: absolute;
-      bottom: 44px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 10;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(106, 75, 53, 0.25);
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .dot.active {
-      width: 22px;
-      border-radius: 99px;
-      background: var(--btn-brown);
-    }
+    /* Navigasi Titik & Footer */
+    .dots-nav { position: absolute; bottom: 44px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(106, 75, 53, 0.2); cursor: pointer; transition: all 0.3s; }
+    .dot.active { width: 22px; border-radius: 99px; background: var(--btn-brown); }
+    .footer-bar { background: #543828; color: #EBD9CE; font-size: 0.8rem; padding: 10px; text-align: center; }
   </style>
 </head>
 <body>
 
+  <!-- FILTER SVG UNTUK EFEK CAT AIR & GARIS PENSIL -->
+  <svg class="svg-filter-defs">
+    <defs>
+      <!-- Filter 1: Efek Tekstur Cat Air (Gumpalan Warna) -->
+      <filter id="watercolor-filter" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <!-- Filter 2: Garis Tepi Sketsa (Tidak Rata) -->
+      <filter id="sketch-line" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="1" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
   <div class="storybook-container">
     <div class="slides-wrapper">
       
-      <!-- Slide 1: Hei, kamu. -->
+      <!-- Slide 1 -->
       <section class="slide active" id="slide-1">
         <div style="text-align: center;">
           <div class="heart-icon">❤️</div>
           <h1>Hei, kamu.</h1>
           <p class="subtitle">Ada sesuatu buat kamu.</p>
-          <div style="color: #96705B; font-size: 0.9rem; margin: 4px 0;">— 🌿 ❤️ 🌿 —</div>
         </div>
 
-        <!-- Capybara pegang bunga SVG -->
         <div class="art-container">
-          <svg viewBox="0 0 200 200" width="100%" height="100%">
-            <!-- Badan -->
-            <ellipse cx="110" cy="125" rx="55" ry="48" fill="#B38054" />
-            <ellipse cx="85" cy="85" rx="35" ry="32" fill="#B38054" />
-            <!-- Hidung/Moncong -->
-            <path d="M 55,80 Q 52,105 78,105 Q 95,105 95,80 Z" fill="#996840" />
-            <ellipse cx="62" cy="88" rx="3" ry="5" fill="#3D2619" />
-            <line x1="68" y1="88" x2="68" y2="98" stroke="#3D2619" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- Mata santai -->
-            <path d="M 82,75 Q 87,70 92,75" stroke="#3D2619" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <!-- Telinga -->
-            <circle cx="112" cy="62" r="8" fill="#996840" />
-            <circle cx="112" cy="62" r="4.5" fill="#6E442B" />
-            <!-- Kaki Depan & Bunga -->
-            <path d="M 75,130 Q 70,150 82,150" stroke="#996840" stroke-width="12" stroke-linecap="round"/>
-            <path d="M 125,135 Q 130,155 142,152" stroke="#996840" stroke-width="12" stroke-linecap="round"/>
-            <circle cx="70" cy="115" r="7" fill="#FFAAA6" />
-            <circle cx="62" cy="110" r="7" fill="#FFAAA6" />
-            <circle cx="78" cy="110" r="7" fill="#FFAAA6" />
-            <circle cx="70" cy="105" r="5" fill="#FFD3B6" />
+          <!-- SVG Kapibara Duduk Pegang Bunga (Gaya Referensi) -->
+          <svg viewBox="0 0 180 180" width="100%" height="100%">
+            <!-- Group Utama dengan Filter Cat Air -->
+            <g filter="url(#watercolor-filter)">
+              <!-- Badan Utama -->
+              <ellipse cx="105" cy="115" rx="55" ry="50" fill="var(--capi-body)" />
+              <!-- Kepala/Hidung Besar khas referensi -->
+              <path d="M 50,55 C 25,75 30,110 60,115 C 80,115 95,100 95,75 C 95,50 75,45 50,55 Z" fill="var(--capi-body)" />
+              <!-- Area Moncong -->
+              <path d="M 40,75 C 30,85 35,105 55,108 C 70,108 75,95 75,75 Z" fill="var(--capi-snout)" />
+              <!-- Mata (Garis Lengkung Sedih/Lelah) -->
+              <path d="M 60,70 Q 66,66 72,70" stroke="var(--capi-line)" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#sketch-line)" />
+              <!-- Hidung -->
+              <ellipse cx="45" cy="88" rx="2.5" ry="4" fill="var(--capi-line)" />
+              <!-- Telinga Kecil -->
+              <circle cx="95" cy="55" r="7" fill="var(--capi-snout)" />
+              
+              <!-- Bunga dan Tangan -->
+              <path d="M 65,120 Q 55,135 70,135" stroke="var(--capi-snout)" stroke-width="9" stroke-linecap="round" fill="none"/>
+              <g transform="translate(52, 95) scale(0.8)">
+                <circle cx="10" cy="10" r="8" fill="#FFAAA6" />
+                <circle cx="10" cy="-2" r="8" fill="#FFAAA6" />
+                <circle cx="-2" cy="4" r="8" fill="#FFAAA6" />
+                <circle cx="22" cy="4" r="8" fill="#FFAAA6" />
+                <circle cx="10" cy="4" r="6" fill="#FFD3B6" />
+              </g>
+            </g>
           </svg>
         </div>
 
         <button class="action-btn" onclick="goToSlide(1)">Buka ➔</button>
       </section>
 
-      <!-- Slide 2: Sebenarnya nggak ada apa-apa -->
+      <!-- Slide 2 -->
       <section class="slide" id="slide-2">
         <div style="text-align: center;">
           <h1>Sebenarnya</h1>
-          <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-brown);">nggak ada apa-apa.</h2>
+          <p class="subtitle">nggak ada apa-apa.</p>
           <div class="heart-icon">❤️</div>
-          <p class="subtitle" style="font-size: 1rem;">Aku cuma mau kasih ini.</p>
+          <p style="font-size: 0.95rem; margin-top: 4px;">Aku cuma mau kasih ini.</p>
         </div>
 
-        <!-- Capybara jalan & kupu-kupu SVG -->
         <div class="art-container">
-          <svg viewBox="0 0 200 200" width="100%" height="100%">
-            <!-- Kupu-kupu -->
-            <g transform="translate(135, 60)">
-              <ellipse cx="0" cy="0" rx="6" ry="9" fill="#FFD166" transform="rotate(25)" />
-              <ellipse cx="10" cy="-3" rx="5" ry="7" fill="#FFD166" transform="rotate(-15)" />
-              <circle cx="5" cy="2" r="2" fill="#5C3D2E" />
+          <!-- SVG Kapibara Jalan (Hidung Besar khas referensi) -->
+          <svg viewBox="0 0 200 180" width="100%" height="100%">
+            <g filter="url(#watercolor-filter)">
+              <!-- Badan Panjang -->
+              <ellipse cx="105" cy="105" rx="60" ry="42" fill="var(--capi-body)" />
+              <!-- Kepala Hidung Besar -->
+              <path d="M 50,55 C 15,75 25,115 55,118 C 75,118 90,105 90,80 C 90,55 75,45 50,55 Z" fill="var(--capi-body)" />
+              <!-- Area Moncong -->
+              <path d="M 40,75 C 25,85 30,108 50,110 C 65,110 70,95 70,75 Z" fill="var(--capi-snout)" />
+              <!-- Mata Merem -->
+              <path d="M 58,72 Q 64,68 70,72" stroke="var(--capi-line)" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#sketch-line)" />
+              <!-- Kaki -->
+              <path d="M 70,135 Q 68,155 75,155" stroke="var(--capi-snout)" stroke-width="11" stroke-linecap="round" fill="none"/>
+              <path d="M 135,130 Q 138,152 145,150" stroke="var(--capi-snout)" stroke-width="11" stroke-linecap="round" fill="none"/>
             </g>
-            <!-- Badan Jalan -->
-            <ellipse cx="95" cy="115" rx="52" ry="40" fill="#B38054" />
-            <circle cx="62" cy="92" r="30" fill="#B38054" />
-            <path d="M 40,88 Q 38,110 58,110 Q 72,110 72,88 Z" fill="#996840" />
-            <ellipse cx="46" cy="95" rx="2.5" ry="4" fill="#3D2619" />
-            <!-- Mata merem -->
-            <path d="M 64,86 Q 70,82 76,86" stroke="#3D2619" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <circle cx="85" cy="72" r="7" fill="#996840" />
-            <!-- Kaki Langkah -->
-            <path d="M 60,135 L 56,158" stroke="#996840" stroke-width="10" stroke-linecap="round"/>
-            <path d="M 80,135 L 85,158" stroke="#996840" stroke-width="10" stroke-linecap="round"/>
-            <path d="M 120,130 L 115,156" stroke="#996840" stroke-width="10" stroke-linecap="round"/>
-            <path d="M 138,128 L 145,154" stroke="#996840" stroke-width="10" stroke-linecap="round"/>
           </svg>
         </div>
 
         <button class="action-btn" onclick="goToSlide(2)">Lihat ➔</button>
       </section>
 
-      <!-- Slide 3: Surat Sticky Note -->
+      <!-- Slide 3 -->
       <section class="slide" id="slide-3">
         <div class="sticky-note">
           <div class="washi-tape"></div>
-          <div class="sticky-title">Buat kamu.</div>
-          <div class="heart-icon">❤️</div>
-          <div class="sticky-content">
-            Nggak ada alasan khusus.<br>
-            Cuma pengen kasih<br>
-            sesuatu kecil.<br><br>
+          <p style="color: #E26D5C; font-size: 1.3rem; font-weight: 800;">Buat kamu.</p>
+          <div class="heart-icon" style="font-size: 0.9rem; margin: 5px 0;">❤️</div>
+          <p style="font-size: 0.9rem; line-height: 1.5; color: #6C4F3D;">
+            Ngak ada alasan khusus.<br>Cuma pengen kasih sesuatu kecil.<br><br>
             <strong>Terima kasih sudah<br>jadi bagian yang berarti.</strong>
           </div>
-          <div class="heart-icon" style="margin-top: 10px;">❤️</div>
         </div>
 
-        <!-- Capybara minum kopi SVG -->
-        <div class="art-container" style="height: 160px;">
-          <svg viewBox="0 0 160 140" width="100%" height="100%">
-            <ellipse cx="80" cy="85" rx="42" ry="38" fill="#B38054" />
-            <circle cx="65" cy="55" r="24" fill="#B38054" />
-            <path d="M 46,55 Q 44,72 60,72 Q 72,72 72,55 Z" fill="#996840" />
-            <path d="M 68,50 Q 72,46 76,50" stroke="#3D2619" stroke-width="2" fill="none"/>
-            <!-- Cangkir -->
-            <rect x="42" y="70" width="22" height="20" rx="4" fill="#FFF9F2" stroke="#D1B8A5" stroke-width="1.5"/>
-            <path d="M 42,75 C 36,75 36,85 42,85" fill="none" stroke="#D1B8A5" stroke-width="1.5"/>
-            <path d="M 50,78 Q 53,74 56,78 Q 53,82 50,78" fill="#E58C8A" />
+        <div class="art-container" style="height: 150px; max-width: 200px; margin-top: -10px;">
+          <!-- SVG Kapibara Minum Kopi (Gaya Referensi) -->
+          <svg viewBox="0 0 160 160" width="100%" height="100%">
+            <g filter="url(#watercolor-filter)">
+              <ellipse cx="90" cy="100" rx="45" ry="45" fill="var(--capi-body)" />
+              <path d="M 55,55 C 30,70 35,100 55,102 C 70,102 80,90 80,70 C 80,50 70,45 55,55 Z" fill="var(--capi-body)" />
+              <!-- Mata -->
+              <path d="M 60,68 Q 65,64 70,68" stroke="var(--capi-line)" stroke-width="2" fill="none" stroke-linecap="round" />
+              <!-- Cangkir -->
+              <rect x="35" y="85" width="22" height="20" rx="4" fill="#FFF9F2" stroke="#D1B8A5" stroke-width="1.5"/>
+              <path d="M 46,93 Q 49,89 52,93 Q 49,97 46,93" fill="#E58C8A" /> <!-- Hati di cangkir -->
+            </g>
           </svg>
         </div>
 
         <button class="action-btn" onclick="goToSlide(3)">Lanjut ➔</button>
       </section>
 
-      <!-- Slide 4: Udah, itu aja (Sunset Capybara & Jeruk) -->
+      <!-- Slide 4 -->
       <section class="slide" id="slide-4">
         <div style="text-align: center;">
           <h1 style="color: #4A2818;">Udah, itu aja.</h1>
-          <div class="heart-icon">❤️</div>
           <p class="subtitle" style="color: #633B27;">Semoga kamu suka.</p>
+          <div class="heart-icon">❤️</div>
         </div>
 
-        <!-- Capybara santai di bukit ada jeruk di kepala SVG -->
-        <div class="art-container" style="height: 180px;">
+        <div class="art-container" style="max-width: 320px;">
+          <!-- SVG Kapibara Rebahan & Jeruk (Gaya Referensi) -->
           <svg viewBox="0 0 200 160" width="100%" height="100%">
-            <!-- Matahari terbenam -->
-            <circle cx="60" cy="110" r="26" fill="#FFE3A8" opacity="0.85" />
-            <!-- Bukit sunset -->
-            <path d="M -20,160 Q 50,110 120,140 Q 170,160 220,130 L 220,180 L -20,180 Z" fill="#7D9366" opacity="0.6"/>
-            <!-- Capybara rebahan -->
-            <ellipse cx="115" cy="115" rx="55" ry="28" fill="#A8754B" />
-            <ellipse cx="70" cy="110" rx="22" ry="18" fill="#A8754B" />
-            <path d="M 74,106 Q 80,102 84,106" stroke="#3D2619" stroke-width="2" fill="none"/>
-            <circle cx="88" cy="98" r="5" fill="#8C5E39" />
-            <!-- Jeruk (Mandarin) di atas kepala -->
-            <circle cx="86" cy="85" r="9" fill="#FFA500" />
-            <ellipse cx="88" cy="76" rx="4" ry="2" fill="#52796F" />
+            <g filter="url(#watercolor-filter)">
+              <!-- Capybara rebahan -->
+              <ellipse cx="110" cy="110" rx="65" ry="30" fill="var(--capi-body)" />
+              <path d="M 65,105 C 45,100 50,80 65,78 C 75,78 85,85 85,100 Z" fill="var(--capi-body)" />
+              <!-- Mata merem sedih -->
+              <path d="M 66,90 Q 70,87 74,90" stroke="var(--capi-line)" stroke-width="2" fill="none" stroke-linecap="round" />
+              <!-- Jeruk -->
+              <circle cx="76" cy="70" r="9" fill="#FFA500" />
+              <ellipse cx="78" cy="62" rx="4" ry="2" fill="#52796F" />
+            </g>
           </svg>
         </div>
 
-        <button class="action-btn" style="background: rgba(255, 255, 255, 0.7); color: #5C3D2E; border: 1.5px solid #E2B9A0;" onclick="goToSlide(0)">
-          🐾 Sampai ketemu lagi! 🐾
+        <button class="action-btn" style="background: rgba(255, 255, 255, 0.6); color: #5C3D2E; border: 1px solid #E2B9A0;" onclick="goToSlide(0)">
+          🐾 Kembali ke Awal
         </button>
       </section>
 
     </div>
 
-    <!-- Titik Indikator Slide -->
     <div class="dots-nav">
       <div class="dot active" onclick="goToSlide(0)"></div>
       <div class="dot" onclick="goToSlide(1)"></div>
@@ -403,23 +275,17 @@
       <div class="dot" onclick="goToSlide(3)"></div>
     </div>
 
-    <!-- Footer Bar Bawah -->
-    <div class="footer-bar">
-      Dibuat dengan ❤️ untuk kamu
-    </div>
+    <div class="footer-bar">Dibuat dengan ❤️ untuk kamu</div>
   </div>
 
   <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
-
     function goToSlide(index) {
       slides[currentSlide].classList.remove('active');
       dots[currentSlide].classList.remove('active');
-      
       currentSlide = index;
-      
       slides[currentSlide].classList.add('active');
       dots[currentSlide].classList.add('active');
     }
