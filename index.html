@@ -1,294 +1,1269 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buat Kamu 🐾</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --text-brown: #5C3D2E;
-      --btn-brown: #6A4B35;
-      --accent-pink: #E58C8A;
-      /* Warna cat air kapibara dari referensi */
-      --capi-body: #C19A74; 
-      --capi-snout: #A67D5B;
-      --capi-line: #523A28; /* Coklat tua untuk garis mata/hidung */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hei, kamu.</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root{
+    --brown:#68482f;
+    --brown-dark:#543923;
+    --cream:#fbf0dc;
+    --cream2:#f6e5cc;
+    --peach:#f8c7b5;
+    --pink:#ffd8c8;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4eadb;
+    color:var(--brown);
+    font-family:'Quicksand',sans-serif;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    min-height:100vh;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.panel{
+    width:min(1050px,100%);
+    min-height:700px;
+    border-radius:28px;
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    box-shadow:
+        0 15px 45px rgba(80,55,35,.10);
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.one{
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.5),transparent 25%),
+        linear-gradient(135deg,#fff1dc,#f6e5cc);
+}
+
+.two{
+    background:
+        radial-gradient(circle at 80% 20%,rgba(255,255,255,.5),transparent 25%),
+        linear-gradient(135deg,#fff4e5,#f8ead9);
+}
+
+.three{
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 25%),
+        linear-gradient(135deg,#ffd8c8,#f7c6b7);
+}
+
+.four{
+    background:
+        linear-gradient(
+            180deg,
+            #d6c0c9 0%,
+            #f2d8c0 55%,
+            #c9b87e 100%
+        );
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.content{
+    position:relative;
+    z-index:5;
+    width:min(560px,90%);
+    padding:25px;
+
+    animation:appear .9s ease both;
+}
+
+h1{
+    font-size:clamp(46px,9vw,78px);
+    line-height:1;
+    margin:0 0 18px;
+    letter-spacing:-2px;
+}
+
+h2{
+    font-size:clamp(32px,6vw,52px);
+    line-height:1.12;
+    margin:0 0 18px;
+}
+
+p{
+    font-size:19px;
+    line-height:1.7;
+    margin:8px 0;
+}
+
+.small{
+    opacity:.65;
+    font-size:15px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button{
+    border:0;
+    background:var(--brown);
+    color:white;
+
+    padding:14px 31px;
+    border-radius:999px;
+
+    margin-top:25px;
+
+    font:
+        600 17px
+        'Quicksand',
+        sans-serif;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 20px rgba(84,58,38,.16);
+
+    transition:
+        transform .25s,
+        box-shadow .25s,
+        background .25s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    background:var(--brown-dark);
+
+    box-shadow:
+        0 12px 25px rgba(84,58,38,.22);
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+/* =========================
+   CAPYBARA
+========================= */
+
+.capybara{
+    position:absolute;
+    z-index:3;
+
+    width:330px;
+
+    animation:
+        capyFloat 4s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 12px 10px rgba(80,55,35,.12)
+        );
+}
+
+/* SVG */
+.capy-svg{
+    width:100%;
+    height:auto;
+}
+
+/* posisi */
+
+.capy-one{
+    right:2%;
+    bottom:-8px;
+}
+
+.capy-two{
+    left:-15px;
+    bottom:0;
+    width:380px;
+
+    animation-delay:.3s;
+}
+
+.capy-three{
+    right:0;
+    bottom:0;
+    width:340px;
+
+    animation-delay:.6s;
+}
+
+.capy-four{
+    right:-10px;
+    bottom:-15px;
+    width:430px;
+
+    animation-delay:.8s;
+}
+
+@keyframes capyFloat{
+
+    0%,100%{
+        transform:translateY(0);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    50%{
+        transform:translateY(-10px);
+    }
+}
 
-    body {
-      font-family: 'Nunito', sans-serif;
-      background-color: #ECE5DC;
-      color: var(--text-brown);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 16px;
+/* =========================
+   NOTE
+========================= */
+
+.note{
+    background:rgba(255,250,240,.95);
+
+    padding:38px 34px;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 18px 35px rgba(108,69,36,.12);
+
+    transform:rotate(-1deg);
+}
+
+.note h2{
+    color:#d9786a;
+}
+
+.note p{
+    font-size:19px;
+}
+
+/* =========================
+   DECORATION
+========================= */
+
+.decor{
+    position:absolute;
+
+    font-size:28px;
+
+    opacity:.6;
+
+    animation:
+        drift 5s ease-in-out infinite;
+}
+
+.d1{
+    left:8%;
+    top:12%;
+}
+
+.d2{
+    right:13%;
+    top:18%;
+
+    animation-delay:1s;
+}
+
+.d3{
+    left:12%;
+    bottom:16%;
+
+    animation-delay:2s;
+}
+
+@keyframes drift{
+
+    50%{
+        transform:
+            translateY(-12px)
+            rotate(7deg);
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    background:rgba(89,60,38,.88);
+
+    color:white;
+
+    padding:12px;
+
+    font-size:14px;
+
+    z-index:8;
+}
+
+/* =========================
+   SPARKLE
+========================= */
+
+.spark{
+    position:fixed;
+
+    z-index:50;
+
+    pointer-events:none;
+
+    font-size:22px;
+
+    transition:
+        1.1s ease-out;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    section{
+        padding:8px;
     }
 
-    /* Container Utama */
-    .storybook-container {
-      width: 100%;
-      max-width: 580px;
-      height: 680px;
-      background: #FDEED9; /* Warna dasar hangat */
-      border-radius: 28px;
-      box-shadow: 0 20px 45px rgba(92, 61, 46, 0.15);
-      border: 8px solid #FFF8F0;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+    .panel{
+        min-height:720px;
+        border-radius:22px;
     }
 
-    /* Slides & Transisi */
-    .slides-wrapper { position: relative; flex: 1; width: 100%; height: 100%; }
-    .slide {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      display: flex; flex-direction: column; justify-content: space-between; align-items: center;
-      padding: 40px 28px 24px;
-      opacity: 0; visibility: hidden;
-      transform: translateY(15px);
-      transition: all 0.5s ease-out;
-    }
-    .slide.active { opacity: 1; visibility: visible; transform: translateY(0); }
-
-    /* Tipografi */
-    h1 { font-size: 2.2rem; font-weight: 800; color: var(--text-brown); margin-bottom: 6px; }
-    p.subtitle { font-size: 1.1rem; font-weight: 600; color: #7D5A44; }
-    .heart-icon { color: var(--accent-pink); animation: heartbeat 1.8s infinite; }
-    @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-
-    /* Tombol */
-    .action-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--btn-brown); color: #FFFFFF;
-      font-size: 1rem; font-weight: 700; padding: 12px 28px;
-      border: none; border-radius: 999px; cursor: pointer;
-      box-shadow: 0 5px 12px rgba(106, 75, 53, 0.2);
-      transition: transform 0.2s; margin-top: 14px;
-    }
-    .action-btn:hover { background: #543A29; transform: translateY(-2px); }
-
-    /* Area Ilustrasi SVG */
-    .art-container {
-      width: 100%; max-width: 280px; height: 240px;
-      display: flex; justify-content: center; align-items: center;
-      margin: 10px 0;
+    .content{
+        margin-top:-110px;
     }
 
-    /* Definisi Filter SVG untuk Gaya Cat Air */
-    .svg-filter-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
-
-    /* Gaya Spesifik Halaman */
-    #slide-1 { background: radial-gradient(circle at 50% 40%, #FFFDF9 0%, #F8E8D4 100%); }
-    #slide-2 { background: radial-gradient(circle at 60% 40%, #FFFDF9 0%, #F5E2CC 100%); }
-    #slide-3 { background: #FCEFE3; }
-    #slide-4 { background: linear-gradient(180deg, #DBC1E0 0%, #F6C6B2 50%, #FBE6C2 100%); }
-
-    /* Sticky Note Slide 3 */
-    .sticky-note {
-      background: #FFFDF9; border-radius: 12px; padding: 24px 22px;
-      width: 100%; max-width: 320px;
-      box-shadow: 0 10px 25px rgba(133, 94, 72, 0.1);
-      position: relative; text-align: center; margin-top: 10px;
-      font-weight: 600;
-    }
-    .washi-tape {
-      width: 90px; height: 18px; background: rgba(229, 140, 138, 0.4);
-      position: absolute; top: -9px; left: 50%; transform: translateX(-50%); border-radius: 3px;
+    .capy-one,
+    .capy-three{
+        width:235px;
     }
 
-    /* Navigasi Titik & Footer */
-    .dots-nav { position: absolute; bottom: 44px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(106, 75, 53, 0.2); cursor: pointer; transition: all 0.3s; }
-    .dot.active { width: 22px; border-radius: 99px; background: var(--btn-brown); }
-    .footer-bar { background: #543828; color: #EBD9CE; font-size: 0.8rem; padding: 10px; text-align: center; }
-  </style>
+    .capy-two{
+        width:275px;
+        left:-35px;
+    }
+
+    .capy-four{
+        width:295px;
+        right:-20px;
+    }
+
+    p{
+        font-size:17px;
+    }
+
+    .note{
+        padding:30px 22px;
+    }
+
+    .note p{
+        font-size:17px;
+    }
+
+}
+
+/* =========================
+   ENTRY
+========================= */
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-  <!-- FILTER SVG UNTUK EFEK CAT AIR & GARIS PENSIL -->
-  <svg class="svg-filter-defs">
-    <defs>
-      <!-- Filter 1: Efek Tekstur Cat Air (Gumpalan Warna) -->
-      <filter id="watercolor-filter" x="-20%" y="-20%" width="140%" height="140%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise"/>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
-      </filter>
 
-      <!-- Filter 2: Garis Tepi Sketsa (Tidak Rata) -->
-      <filter id="sketch-line" x="-10%" y="-10%" width="120%" height="120%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="1" result="noise"/>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
-      </filter>
-    </defs>
-  </svg>
+<!-- ==================================================
+     1. OPENING
+================================================== -->
 
-  <div class="storybook-container">
-    <div class="slides-wrapper">
-      
-      <!-- Slide 1 -->
-      <section class="slide active" id="slide-1">
-        <div style="text-align: center;">
-          <div class="heart-icon">❤️</div>
-          <h1>Hei, kamu.</h1>
-          <p class="subtitle">Ada sesuatu buat kamu.</p>
-        </div>
+<section id="s1">
 
-        <div class="art-container">
-          <!-- SVG Kapibara Duduk Pegang Bunga (Gaya Referensi) -->
-          <svg viewBox="0 0 180 180" width="100%" height="100%">
-            <!-- Group Utama dengan Filter Cat Air -->
-            <g filter="url(#watercolor-filter)">
-              <!-- Badan Utama -->
-              <ellipse cx="105" cy="115" rx="55" ry="50" fill="var(--capi-body)" />
-              <!-- Kepala/Hidung Besar khas referensi -->
-              <path d="M 50,55 C 25,75 30,110 60,115 C 80,115 95,100 95,75 C 95,50 75,45 50,55 Z" fill="var(--capi-body)" />
-              <!-- Area Moncong -->
-              <path d="M 40,75 C 30,85 35,105 55,108 C 70,108 75,95 75,75 Z" fill="var(--capi-snout)" />
-              <!-- Mata (Garis Lengkung Sedih/Lelah) -->
-              <path d="M 60,70 Q 66,66 72,70" stroke="var(--capi-line)" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#sketch-line)" />
-              <!-- Hidung -->
-              <ellipse cx="45" cy="88" rx="2.5" ry="4" fill="var(--capi-line)" />
-              <!-- Telinga Kecil -->
-              <circle cx="95" cy="55" r="7" fill="var(--capi-snout)" />
-              
-              <!-- Bunga dan Tangan -->
-              <path d="M 65,120 Q 55,135 70,135" stroke="var(--capi-snout)" stroke-width="9" stroke-linecap="round" fill="none"/>
-              <g transform="translate(52, 95) scale(0.8)">
-                <circle cx="10" cy="10" r="8" fill="#FFAAA6" />
-                <circle cx="10" cy="-2" r="8" fill="#FFAAA6" />
-                <circle cx="-2" cy="4" r="8" fill="#FFAAA6" />
-                <circle cx="22" cy="4" r="8" fill="#FFAAA6" />
-                <circle cx="10" cy="4" r="6" fill="#FFD3B6" />
-              </g>
-            </g>
-          </svg>
-        </div>
+<div class="panel one">
 
-        <button class="action-btn" onclick="goToSlide(1)">Buka ➔</button>
-      </section>
+    <span class="decor d1">🍃</span>
+    <span class="decor d2">✦</span>
+    <span class="decor d3">🌿</span>
 
-      <!-- Slide 2 -->
-      <section class="slide" id="slide-2">
-        <div style="text-align: center;">
-          <h1>Sebenarnya</h1>
-          <p class="subtitle">nggak ada apa-apa.</p>
-          <div class="heart-icon">❤️</div>
-          <p style="font-size: 0.95rem; margin-top: 4px;">Aku cuma mau kasih ini.</p>
-        </div>
 
-        <div class="art-container">
-          <!-- SVG Kapibara Jalan (Hidung Besar khas referensi) -->
-          <svg viewBox="0 0 200 180" width="100%" height="100%">
-            <g filter="url(#watercolor-filter)">
-              <!-- Badan Panjang -->
-              <ellipse cx="105" cy="105" rx="60" ry="42" fill="var(--capi-body)" />
-              <!-- Kepala Hidung Besar -->
-              <path d="M 50,55 C 15,75 25,115 55,118 C 75,118 90,105 90,80 C 90,55 75,45 50,55 Z" fill="var(--capi-body)" />
-              <!-- Area Moncong -->
-              <path d="M 40,75 C 25,85 30,108 50,110 C 65,110 70,95 70,75 Z" fill="var(--capi-snout)" />
-              <!-- Mata Merem -->
-              <path d="M 58,72 Q 64,68 70,72" stroke="var(--capi-line)" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#sketch-line)" />
-              <!-- Kaki -->
-              <path d="M 70,135 Q 68,155 75,155" stroke="var(--capi-snout)" stroke-width="11" stroke-linecap="round" fill="none"/>
-              <path d="M 135,130 Q 138,152 145,150" stroke="var(--capi-snout)" stroke-width="11" stroke-linecap="round" fill="none"/>
-            </g>
-          </svg>
-        </div>
+    <div class="content">
 
-        <button class="action-btn" onclick="goToSlide(2)">Lihat ➔</button>
-      </section>
+        <h1>
+            Hei, kamu.
+        </h1>
 
-      <!-- Slide 3 -->
-      <section class="slide" id="slide-3">
-        <div class="sticky-note">
-          <div class="washi-tape"></div>
-          <p style="color: #E26D5C; font-size: 1.3rem; font-weight: 800;">Buat kamu.</p>
-          <div class="heart-icon" style="font-size: 0.9rem; margin: 5px 0;">❤️</div>
-          <p style="font-size: 0.9rem; line-height: 1.5; color: #6C4F3D;">
-            Ngak ada alasan khusus.<br>Cuma pengen kasih sesuatu kecil.<br><br>
-            <strong>Terima kasih sudah<br>jadi bagian yang berarti.</strong>
-          </div>
-        </div>
+        <p>
+            Ada sesuatu buat kamu.
+        </p>
 
-        <div class="art-container" style="height: 150px; max-width: 200px; margin-top: -10px;">
-          <!-- SVG Kapibara Minum Kopi (Gaya Referensi) -->
-          <svg viewBox="0 0 160 160" width="100%" height="100%">
-            <g filter="url(#watercolor-filter)">
-              <ellipse cx="90" cy="100" rx="45" ry="45" fill="var(--capi-body)" />
-              <path d="M 55,55 C 30,70 35,100 55,102 C 70,102 80,90 80,70 C 80,50 70,45 55,55 Z" fill="var(--capi-body)" />
-              <!-- Mata -->
-              <path d="M 60,68 Q 65,64 70,68" stroke="var(--capi-line)" stroke-width="2" fill="none" stroke-linecap="round" />
-              <!-- Cangkir -->
-              <rect x="35" y="85" width="22" height="20" rx="4" fill="#FFF9F2" stroke="#D1B8A5" stroke-width="1.5"/>
-              <path d="M 46,93 Q 49,89 52,93 Q 49,97 46,93" fill="#E58C8A" /> <!-- Hati di cangkir -->
-            </g>
-          </svg>
-        </div>
+        <p class="small">
+            Nggak perlu penasaran lama-lama.
+        </p>
 
-        <button class="action-btn" onclick="goToSlide(3)">Lanjut ➔</button>
-      </section>
-
-      <!-- Slide 4 -->
-      <section class="slide" id="slide-4">
-        <div style="text-align: center;">
-          <h1 style="color: #4A2818;">Udah, itu aja.</h1>
-          <p class="subtitle" style="color: #633B27;">Semoga kamu suka.</p>
-          <div class="heart-icon">❤️</div>
-        </div>
-
-        <div class="art-container" style="max-width: 320px;">
-          <!-- SVG Kapibara Rebahan & Jeruk (Gaya Referensi) -->
-          <svg viewBox="0 0 200 160" width="100%" height="100%">
-            <g filter="url(#watercolor-filter)">
-              <!-- Capybara rebahan -->
-              <ellipse cx="110" cy="110" rx="65" ry="30" fill="var(--capi-body)" />
-              <path d="M 65,105 C 45,100 50,80 65,78 C 75,78 85,85 85,100 Z" fill="var(--capi-body)" />
-              <!-- Mata merem sedih -->
-              <path d="M 66,90 Q 70,87 74,90" stroke="var(--capi-line)" stroke-width="2" fill="none" stroke-linecap="round" />
-              <!-- Jeruk -->
-              <circle cx="76" cy="70" r="9" fill="#FFA500" />
-              <ellipse cx="78" cy="62" rx="4" ry="2" fill="#52796F" />
-            </g>
-          </svg>
-        </div>
-
-        <button class="action-btn" style="background: rgba(255, 255, 255, 0.6); color: #5C3D2E; border: 1px solid #E2B9A0;" onclick="goToSlide(0)">
-          🐾 Kembali ke Awal
+        <button onclick="go('s2')">
+            Buka →
         </button>
-      </section>
 
     </div>
 
-    <div class="dots-nav">
-      <div class="dot active" onclick="goToSlide(0)"></div>
-      <div class="dot" onclick="goToSlide(1)"></div>
-      <div class="dot" onclick="goToSlide(2)"></div>
-      <div class="dot" onclick="goToSlide(3)"></div>
+
+    <!-- CAPYBARA -->
+
+    <div class="capybara capy-one">
+
+        <svg
+            class="capy-svg"
+            viewBox="0 0 400 360"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+            <!-- bunga -->
+            <g
+                transform="translate(245 15)"
+                class="flower"
+            >
+
+                <line
+                    x1="35"
+                    y1="65"
+                    x2="65"
+                    y2="125"
+                    stroke="#728253"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                />
+
+                <circle
+                    cx="35"
+                    cy="55"
+                    r="17"
+                    fill="#f49c91"
+                />
+
+                <circle
+                    cx="65"
+                    cy="45"
+                    r="17"
+                    fill="#f5b19e"
+                />
+
+                <circle
+                    cx="70"
+                    cy="75"
+                    r="17"
+                    fill="#ef8f87"
+                />
+
+                <circle
+                    cx="43"
+                    cy="82"
+                    r="17"
+                    fill="#f6b5a2"
+                />
+
+                <circle
+                    cx="52"
+                    cy="64"
+                    r="10"
+                    fill="#e9b65b"
+                />
+
+            </g>
+
+
+            <!-- badan -->
+
+            <ellipse
+                cx="205"
+                cy="270"
+                rx="130"
+                ry="75"
+                fill="#9a6847"
+            />
+
+
+            <!-- kaki -->
+
+            <ellipse
+                cx="115"
+                cy="325"
+                rx="35"
+                ry="19"
+                fill="#805536"
+            />
+
+            <ellipse
+                cx="270"
+                cy="325"
+                rx="35"
+                ry="19"
+                fill="#805536"
+            />
+
+
+            <!-- kepala -->
+
+            <ellipse
+                cx="235"
+                cy="175"
+                rx="82"
+                ry="76"
+                fill="#ad7650"
+            />
+
+
+            <!-- telinga -->
+
+            <circle
+                cx="180"
+                cy="113"
+                r="21"
+                fill="#815638"
+            />
+
+            <circle
+                cx="292"
+                cy="112"
+                r="21"
+                fill="#815638"
+            />
+
+
+            <!-- mata -->
+
+            <circle
+                cx="208"
+                cy="166"
+                r="6"
+                fill="#33251e"
+            />
+
+            <circle
+                cx="265"
+                cy="166"
+                r="6"
+                fill="#33251e"
+            />
+
+
+            <!-- pipi -->
+
+            <ellipse
+                cx="195"
+                cy="190"
+                rx="14"
+                ry="7"
+                fill="#c98570"
+                opacity=".65"
+            />
+
+            <ellipse
+                cx="278"
+                cy="190"
+                rx="14"
+                ry="7"
+                fill="#c98570"
+                opacity=".65"
+            />
+
+
+            <!-- hidung -->
+
+            <ellipse
+                cx="238"
+                cy="190"
+                rx="19"
+                ry="13"
+                fill="#493024"
+            />
+
+
+            <!-- mulut -->
+
+            <path
+                d="M238 200
+                   C238 210 228 214 221 211
+                   M238 200
+                   C238 210 248 214 255 211"
+                fill="none"
+                stroke="#493024"
+                stroke-width="3"
+                stroke-linecap="round"
+            />
+
+
+            <!-- tangan -->
+
+            <ellipse
+                cx="113"
+                cy="230"
+                rx="32"
+                ry="14"
+                fill="#916141"
+                transform="rotate(25 113 230)"
+            />
+
+            <ellipse
+                cx="312"
+                cy="230"
+                rx="32"
+                ry="14"
+                fill="#916141"
+                transform="rotate(-25 312 230)"
+            />
+
+        </svg>
+
     </div>
 
-    <div class="footer-bar">Dibuat dengan ❤️ untuk kamu</div>
-  </div>
+</div>
 
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    function goToSlide(index) {
-      slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
-      currentSlide = index;
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
+</section>
+
+
+
+<!-- ==================================================
+     2. SECOND
+================================================== -->
+
+<section id="s2">
+
+<div class="panel two">
+
+    <div class="content">
+
+        <h2>
+            Sebenarnya<br>
+            nggak ada apa-apa.
+        </h2>
+
+        <p>
+            Aku cuma mau kasih ini.
+        </p>
+
+        <button onclick="go('s3')">
+            Lihat →
+        </button>
+
+    </div>
+
+
+    <!-- CAPYBARA WALK -->
+
+    <div class="capybara capy-two">
+
+        <svg
+            class="capy-svg"
+            viewBox="0 0 420 320"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+            <!-- badan -->
+
+            <ellipse
+                cx="205"
+                cy="215"
+                rx="125"
+                ry="68"
+                fill="#9b6948"
+            />
+
+            <!-- kaki -->
+
+            <ellipse
+                cx="125"
+                cy="270"
+                rx="31"
+                ry="17"
+                fill="#7d5336"
+            />
+
+            <ellipse
+                cx="270"
+                cy="270"
+                rx="31"
+                ry="17"
+                fill="#7d5336"
+            />
+
+            <!-- kepala -->
+
+            <ellipse
+                cx="150"
+                cy="145"
+                rx="75"
+                ry="70"
+                fill="#ad7650"
+            />
+
+            <!-- telinga -->
+
+            <circle
+                cx="100"
+                cy="88"
+                r="20"
+                fill="#805536"
+            />
+
+            <circle
+                cx="190"
+                cy="87"
+                r="20"
+                fill="#805536"
+            />
+
+            <!-- mata -->
+
+            <circle
+                cx="128"
+                cy="140"
+                r="6"
+                fill="#34261f"
+            />
+
+            <circle
+                cx="176"
+                cy="140"
+                r="6"
+                fill="#34261f"
+            />
+
+            <!-- hidung -->
+
+            <ellipse
+                cx="151"
+                cy="166"
+                rx="18"
+                ry="12"
+                fill="#493024"
+            />
+
+            <!-- mulut -->
+
+            <path
+                d="M151 176
+                   C151 187 142 189 137 186
+                   M151 176
+                   C151 187 160 189 165 186"
+                fill="none"
+                stroke="#493024"
+                stroke-width="3"
+                stroke-linecap="round"
+            />
+
+            <!-- tangan -->
+
+            <ellipse
+                cx="305"
+                cy="190"
+                rx="30"
+                ry="13"
+                fill="#8e5e40"
+                transform="rotate(-30 305 190)"
+            />
+
+        </svg>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     3. MESSAGE
+================================================== -->
+
+<section id="s3">
+
+<div class="panel three">
+
+    <span class="decor d1">
+        ✦
+    </span>
+
+    <span class="decor d2">
+        ♡
+    </span>
+
+
+    <div class="content">
+
+        <div class="note">
+
+            <h2>
+                Buat kamu.
+            </h2>
+
+            <p>
+                Nggak ada alasan khusus.
+            </p>
+
+            <p>
+                Cuma pengen kasih sesuatu kecil.
+            </p>
+
+            <p style="margin-top:20px">
+                <b>
+                    Terima kasih sudah jadi bagian
+                    yang berarti.
+                </b>
+            </p>
+
+        </div>
+
+
+        <button
+            onclick="go('s4'); sparkle()"
+        >
+            Lanjut →
+        </button>
+
+    </div>
+
+
+    <!-- CAPYBARA SANTAI -->
+
+    <div class="capybara capy-three">
+
+        <svg
+            class="capy-svg"
+            viewBox="0 0 400 350"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+            <ellipse
+                cx="205"
+                cy="260"
+                rx="130"
+                ry="65"
+                fill="#9a6847"
+            />
+
+            <ellipse
+                cx="110"
+                cy="310"
+                rx="32"
+                ry="17"
+                fill="#7e5437"
+            />
+
+            <ellipse
+                cx="280"
+                cy="310"
+                rx="32"
+                ry="17"
+                fill="#7e5437"
+            />
+
+            <ellipse
+                cx="235"
+                cy="165"
+                rx="82"
+                ry="76"
+                fill="#ad7650"
+            />
+
+            <circle
+                cx="180"
+                cy="105"
+                r="21"
+                fill="#805536"
+            />
+
+            <circle
+                cx="292"
+                cy="105"
+                r="21"
+                fill="#805536"
+            />
+
+            <circle
+                cx="208"
+                cy="160"
+                r="6"
+                fill="#34261f"
+            />
+
+            <circle
+                cx="264"
+                cy="160"
+                r="6"
+                fill="#34261f"
+            />
+
+            <ellipse
+                cx="235"
+                cy="187"
+                rx="19"
+                ry="13"
+                fill="#493024"
+            />
+
+            <path
+                d="M235 198
+                   C235 208 226 211 220 208
+                   M235 198
+                   C235 208 244 211 250 208"
+                fill="none"
+                stroke="#493024"
+                stroke-width="3"
+                stroke-linecap="round"
+            />
+
+            <!-- cup -->
+
+            <g transform="translate(125 195)">
+
+                <rect
+                    x="0"
+                    y="0"
+                    width="55"
+                    height="55"
+                    rx="9"
+                    fill="#d58f78"
+                />
+
+                <path
+                    d="M55 13
+                       C82 8 82 48 55 43"
+                    fill="none"
+                    stroke="#c47c67"
+                    stroke-width="8"
+                />
+
+                <path
+                    d="M13 -7
+                       C8 -20 20 -22 20 -7
+                       M30 -7
+                       C25 -20 37 -22 37 -7"
+                    fill="none"
+                    stroke="#fff3e8"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                />
+
+            </g>
+
+        </svg>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     4. FINAL
+================================================== -->
+
+<section id="s4">
+
+<div class="panel four">
+
+    <div class="content">
+
+        <h2>
+            Udah, itu aja.
+        </h2>
+
+        <p>
+            Semoga kamu suka.
+        </p>
+
+        <p
+            style="
+                margin-top:20px;
+                font-size:16px;
+            "
+        >
+            Sampai ketemu lagi.
+        </p>
+
+        <button
+            onclick="sparkle()"
+            aria-label="surprise"
+        >
+            ♡
+        </button>
+
+    </div>
+
+
+    <!-- CAPYBARA FINAL -->
+
+    <div class="capybara capy-four">
+
+        <svg
+            class="capy-svg"
+            viewBox="0 0 430 350"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+            <!-- tanah -->
+
+            <ellipse
+                cx="215"
+                cy="315"
+                rx="190"
+                ry="25"
+                fill="#b9a66f"
+                opacity=".6"
+            />
+
+            <!-- badan -->
+
+            <ellipse
+                cx="220"
+                cy="245"
+                rx="135"
+                ry="70"
+                fill="#986747"
+            />
+
+            <!-- kepala -->
+
+            <ellipse
+                cx="250"
+                cy="155"
+                rx="82"
+                ry="75"
+                fill="#ad7650"
+            />
+
+            <!-- telinga -->
+
+            <circle
+                cx="195"
+                cy="97"
+                r="21"
+                fill="#805536"
+            />
+
+            <circle
+                cx="307"
+                cy="98"
+                r="21"
+                fill="#805536"
+            />
+
+            <!-- mata -->
+
+            <circle
+                cx="222"
+                cy="151"
+                r="6"
+                fill="#34261f"
+            />
+
+            <circle
+                cx="278"
+                cy="151"
+                r="6"
+                fill="#34261f"
+            />
+
+            <!-- hidung -->
+
+            <ellipse
+                cx="250"
+                cy="180"
+                rx="20"
+                ry="13"
+                fill="#493024"
+            />
+
+            <!-- senyum -->
+
+            <path
+                d="M250 190
+                   C250 201 241 204 235 201
+                   M250 190
+                   C250 201 259 204 265 201"
+                fill="none"
+                stroke="#493024"
+                stroke-width="3"
+                stroke-linecap="round"
+            />
+
+            <!-- kaki -->
+
+            <ellipse
+                cx="135"
+                cy="307"
+                rx="34"
+                ry="18"
+                fill="#7e5437"
+            />
+
+            <ellipse
+                cx="295"
+                cy="307"
+                rx="34"
+                ry="18"
+                fill="#7e5437"
+            />
+
+            <!-- tangan -->
+
+            <ellipse
+                cx="145"
+                cy="245"
+                rx="33"
+                ry="14"
+                fill="#8d5d40"
+                transform="rotate(15 145 245)"
+            />
+
+            <ellipse
+                cx="335"
+                cy="245"
+                rx="33"
+                ry="14"
+                fill="#8d5d40"
+                transform="rotate(-15 335 245)"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <div class="footer">
+        Dibuat dengan ♡ untuk kamu
+    </div>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* =========================
+   NAVIGASI
+========================= */
+
+function go(id){
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior:'smooth'
+        });
+
+}
+
+
+/* =========================
+   SPARKLE
+========================= */
+
+function sparkle(){
+
+    const symbols=[
+        '✦',
+        '♡',
+        '✧',
+        '·'
+    ];
+
+    for(
+        let i=0;
+        i<25;
+        i++
+    ){
+
+        const s=
+            document.createElement('span');
+
+        s.className='spark';
+
+        s.textContent=
+            symbols[
+                Math.floor(
+                    Math.random()*symbols.length
+                )
+            ];
+
+        s.style.left='50%';
+        s.style.top='50%';
+
+        s.style.fontSize=
+            (14+Math.random()*20)+'px';
+
+        document.body.appendChild(s);
+
+        requestAnimationFrame(()=>{
+
+            s.style.transform=
+                `translate(
+                    ${Math.random()*360-180}px,
+                    ${Math.random()*360-180}px
+                )`;
+
+            s.style.opacity='0';
+
+        });
+
+        setTimeout(
+            ()=>s.remove(),
+            1200
+        );
+
     }
-  </script>
+
+}
+
+</script>
+
 </body>
 </html>
