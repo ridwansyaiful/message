@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hei, kamu.</title>
 
 <style>
+
+/* =====================================================
+   FONT & DASAR
+===================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
 :root{
@@ -32,13 +38,15 @@ body{
     font-family:'Quicksand',sans-serif;
 }
 
-/* =========================
+
+/* =====================================================
    SECTION
-========================= */
+===================================================== */
 
 section{
     min-height:100vh;
     padding:12px;
+
     display:flex;
     align-items:center;
     justify-content:center;
@@ -47,42 +55,74 @@ section{
 .panel{
     width:min(1050px,100%);
     min-height:700px;
+
     border-radius:28px;
+
     position:relative;
     overflow:hidden;
 
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
 
     box-shadow:
         0 15px 45px rgba(80,55,35,.10);
 }
 
-/* =========================
+
+/* =====================================================
    BACKGROUND
-========================= */
+===================================================== */
 
 .one{
+
     background:
-        radial-gradient(circle at 20% 20%,rgba(255,255,255,.5),transparent 25%),
-        linear-gradient(135deg,#fff1dc,#f6e5cc);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.5),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #fff1dc,
+            #f6e5cc
+        );
 }
 
 .two{
+
     background:
-        radial-gradient(circle at 80% 20%,rgba(255,255,255,.5),transparent 25%),
-        linear-gradient(135deg,#fff4e5,#f8ead9);
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,255,255,.5),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #fff4e5,
+            #f8ead9
+        );
 }
 
 .three{
+
     background:
-        radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 25%),
-        linear-gradient(135deg,#ffd8c8,#f7c6b7);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.35),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd8c8,
+            #f7c6b7
+        );
 }
 
 .four{
+
     background:
         linear-gradient(
             180deg,
@@ -92,56 +132,89 @@ section{
         );
 }
 
-/* =========================
-   TEXT
-========================= */
+
+/* =====================================================
+   CONTENT
+===================================================== */
 
 .content{
+
     position:relative;
+
     z-index:5;
+
     width:min(560px,90%);
+
     padding:25px;
 
-    animation:appear .9s ease both;
+    animation:
+        appear .9s ease both;
 }
 
 h1{
-    font-size:clamp(46px,9vw,78px);
+
+    font-size:
+        clamp(
+            46px,
+            9vw,
+            78px
+        );
+
     line-height:1;
-    margin:0 0 18px;
+
+    margin:
+        0 0 18px;
+
     letter-spacing:-2px;
 }
 
 h2{
-    font-size:clamp(32px,6vw,52px);
+
+    font-size:
+        clamp(
+            32px,
+            6vw,
+            52px
+        );
+
     line-height:1.12;
-    margin:0 0 18px;
+
+    margin:
+        0 0 18px;
 }
 
 p{
+
     font-size:19px;
+
     line-height:1.7;
-    margin:8px 0;
+
+    margin:
+        8px 0;
 }
 
-.small{
-    opacity:.65;
-    font-size:15px;
-}
 
-/* =========================
+/* =====================================================
    BUTTON
-========================= */
+===================================================== */
 
 button{
+
     border:0;
-    background:var(--brown);
+
+    background:
+        var(--brown);
+
     color:white;
 
-    padding:14px 31px;
-    border-radius:999px;
+    padding:
+        14px 31px;
 
-    margin-top:25px;
+    border-radius:
+        999px;
+
+    margin-top:
+        25px;
 
     font:
         600 17px
@@ -151,7 +224,8 @@ button{
     cursor:pointer;
 
     box-shadow:
-        0 8px 20px rgba(84,58,38,.16);
+        0 8px 20px
+        rgba(84,58,38,.16);
 
     transition:
         transform .25s,
@@ -160,114 +234,140 @@ button{
 }
 
 button:hover{
-    transform:translateY(-3px);
-    background:var(--brown-dark);
+
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--brown-dark);
 
     box-shadow:
-        0 12px 25px rgba(84,58,38,.22);
+        0 12px 25px
+        rgba(84,58,38,.22);
 }
 
 button:active{
-    transform:scale(.96);
+
+    transform:
+        scale(.96);
 }
 
-/* =========================
+
+/* =====================================================
    CAPYBARA
-========================= */
+===================================================== */
 
 .capybara{
+
     position:absolute;
+
     z-index:3;
 
-    width:330px;
-
     animation:
-        capyFloat 4s ease-in-out infinite;
+        capyFloat 4s
+        ease-in-out
+        infinite;
 
     filter:
         drop-shadow(
-            0 12px 10px rgba(80,55,35,.12)
+            0 12px 10px
+            rgba(80,55,35,.12)
         );
 }
 
-/* SVG */
-.capy-svg{
-    width:100%;
-    height:auto;
-}
 
-/* posisi */
+/* =====================================================
+   CAPYBARA 1
+===================================================== */
 
 .capy-one{
+
+    width:330px;
+
     right:2%;
+
     bottom:-8px;
 }
 
+
+/* =====================================================
+   CAPYBARA 2
+===================================================== */
+
 .capy-two{
-    left:-15px;
-    bottom:0;
+
     width:380px;
 
-    animation-delay:.3s;
+    left:-15px;
+
+    bottom:0;
+
+    animation-delay:
+        .3s;
 }
+
+
+/* =====================================================
+   CAPYBARA 3
+===================================================== */
 
 .capy-three{
-    right:0;
-    bottom:0;
+
     width:340px;
 
-    animation-delay:.6s;
+    right:0;
+
+    bottom:0;
+
+    animation-delay:
+        .6s;
 }
+
+
+/* =====================================================
+   CAPYBARA 4
+===================================================== */
 
 .capy-four{
-    right:-10px;
-    bottom:-15px;
+
     width:430px;
 
-    animation-delay:.8s;
+    right:-10px;
+
+    bottom:-15px;
+
+    animation-delay:
+        .8s;
 }
+
+
+/* =====================================================
+   CAPYBARA ANIMATION
+===================================================== */
 
 @keyframes capyFloat{
 
-    0%,100%{
-        transform:translateY(0);
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
     }
 
     50%{
-        transform:translateY(-10px);
+
+        transform:
+            translateY(-10px);
     }
 }
 
-/* =========================
-   NOTE
-========================= */
 
-.note{
-    background:rgba(255,250,240,.95);
-
-    padding:38px 34px;
-
-    border-radius:12px;
-
-    box-shadow:
-        0 18px 35px rgba(108,69,36,.12);
-
-    transform:rotate(-1deg);
-}
-
-.note h2{
-    color:#d9786a;
-}
-
-.note p{
-    font-size:19px;
-}
-
-/* =========================
+/* =====================================================
    DECORATION
-========================= */
+===================================================== */
 
 .decor{
+
     position:absolute;
 
     font-size:28px;
@@ -275,64 +375,126 @@ button:active{
     opacity:.6;
 
     animation:
-        drift 5s ease-in-out infinite;
+        drift 5s
+        ease-in-out
+        infinite;
 }
 
 .d1{
+
     left:8%;
+
     top:12%;
 }
 
 .d2{
+
     right:13%;
+
     top:18%;
 
-    animation-delay:1s;
+    animation-delay:
+        1s;
 }
 
 .d3{
+
     left:12%;
+
     bottom:16%;
 
-    animation-delay:2s;
+    animation-delay:
+        2s;
 }
+
 
 @keyframes drift{
 
     50%{
+
         transform:
             translateY(-12px)
             rotate(7deg);
     }
 }
 
-/* =========================
+
+/* =====================================================
+   NOTE / PESAN
+===================================================== */
+
+.note{
+
+    background:
+        rgba(
+            255,
+            250,
+            240,
+            .95
+        );
+
+    padding:
+        38px 34px;
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        0 18px 35px
+        rgba(108,69,36,.12);
+
+    transform:
+        rotate(-1deg);
+}
+
+.note h2{
+
+    color:
+        #d9786a;
+}
+
+.note p{
+
+    font-size:
+        19px;
+}
+
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer{
+
     position:absolute;
 
     bottom:0;
+
     left:0;
+
     right:0;
 
-    background:rgba(89,60,38,.88);
+    background:
+        rgba(89,60,38,.88);
 
     color:white;
 
-    padding:12px;
+    padding:
+        12px;
 
-    font-size:14px;
+    font-size:
+        14px;
 
     z-index:8;
 }
 
-/* =========================
+
+/* =====================================================
    SPARKLE
-========================= */
+===================================================== */
 
 .spark{
+
     position:fixed;
 
     z-index:50;
@@ -342,91 +504,209 @@ button:active{
     font-size:22px;
 
     transition:
-        1.1s ease-out;
+        1.1s
+        ease-out;
 }
 
-/* =========================
-   MOBILE
-========================= */
 
-@media(max-width:700px){
+/* =====================================================
+   TOMBOL KANGEN
+===================================================== */
 
-    section{
-        padding:8px;
-    }
+.final-buttons{
 
-    .panel{
-        min-height:720px;
-        border-radius:22px;
-    }
+    display:flex;
 
-    .content{
-        margin-top:-110px;
-    }
+    flex-direction:column;
 
-    .capy-one,
-    .capy-three{
-        width:235px;
-    }
+    align-items:center;
 
-    .capy-two{
-        width:275px;
-        left:-35px;
-    }
+    gap:4px;
 
-    .capy-four{
-        width:295px;
-        right:-20px;
-    }
-
-    p{
-        font-size:17px;
-    }
-
-    .note{
-        padding:30px 22px;
-    }
-
-    .note p{
-        font-size:17px;
-    }
-
+    margin-top:10px;
 }
 
-/* =========================
-   ENTRY
-========================= */
+.btn-kangen{
+
+    min-width:280px;
+
+    font-size:15px;
+
+    padding:
+        12px 22px;
+}
+
+.btn-kangen.banget{
+
+    background:
+        #8d5b45;
+}
+
+
+/* =====================================================
+   RESPONSE KANGEN
+===================================================== */
+
+.response{
+
+    min-height:30px;
+
+    margin-top:18px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    opacity:0;
+
+    transform:
+        translateY(8px);
+
+    transition:
+        .4s ease;
+}
+
+.response.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =====================================================
+   ANIMATION MASUK
+===================================================== */
 
 @keyframes appear{
 
     from{
+
         opacity:0;
-        transform:translateY(25px);
+
+        transform:
+            translateY(25px);
     }
 
     to{
+
         opacity:1;
-        transform:translateY(0);
+
+        transform:
+            translateY(0);
     }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    section{
+
+        padding:
+            8px;
+    }
+
+    .panel{
+
+        min-height:
+            720px;
+
+        border-radius:
+            22px;
+    }
+
+    .content{
+
+        margin-top:
+            -110px;
+    }
+
+    .capy-one,
+    .capy-three{
+
+        width:
+            235px;
+    }
+
+    .capy-two{
+
+        width:
+            275px;
+
+        left:
+            -35px;
+    }
+
+    .capy-four{
+
+        width:
+            295px;
+
+        right:
+            -20px;
+    }
+
+    p{
+
+        font-size:
+            17px;
+    }
+
+    .note{
+
+        padding:
+            30px 22px;
+    }
+
+    .note p{
+
+        font-size:
+            17px;
+    }
+
+    .btn-kangen{
+
+        min-width:
+            260px;
+
+        font-size:
+            14px;
+    }
+
 }
 
 </style>
 </head>
 
+
 <body>
 
 
-<!-- ==================================================
-     1. OPENING
-================================================== -->
+<!-- =====================================================
+     HALAMAN 1
+===================================================== -->
 
 <section id="s1">
 
 <div class="panel one">
 
-    <span class="decor d1">🍃</span>
-    <span class="decor d2">✦</span>
-    <span class="decor d3">🌿</span>
+
+    <span class="decor d1">
+        🍃
+    </span>
+
+    <span class="decor d2">
+        ✦
+    </span>
+
+    <span class="decor d3">
+        🌿
+    </span>
 
 
     <div class="content">
@@ -439,31 +719,183 @@ button:active{
             Ada sesuatu buat kamu.
         </p>
 
-        <p class="small">
-            Nggak perlu penasaran lama-lama.
+        <p
+            style="
+                opacity:.65;
+                font-size:15px;
+            "
+        >
+            Nggak perlu penasaran
+            lama-lama.
         </p>
 
-        <button onclick="go('s2')">
+
+        <button
+            onclick="go('s2')"
+        >
             Buka →
         </button>
 
     </div>
 
 
-    <!-- CAPYBARA -->
+    <!-- KAPIBARA -->
 
     <div class="capybara capy-one">
 
         <svg
-            class="capy-svg"
             viewBox="0 0 400 360"
             xmlns="http://www.w3.org/2000/svg"
         >
 
-            <!-- bunga -->
+            <!-- BADAN -->
+
+            <ellipse
+                cx="205"
+                cy="270"
+                rx="130"
+                ry="75"
+                fill="#9a6847"
+            />
+
+
+            <!-- KAKI -->
+
+            <ellipse
+                cx="115"
+                cy="325"
+                rx="35"
+                ry="19"
+                fill="#805536"
+            />
+
+            <ellipse
+                cx="270"
+                cy="325"
+                rx="35"
+                ry="19"
+                fill="#805536"
+            />
+
+
+            <!-- KEPALA -->
+
+            <ellipse
+                cx="235"
+                cy="175"
+                rx="82"
+                ry="76"
+                fill="#ad7650"
+            />
+
+
+            <!-- TELINGA -->
+
+            <circle
+                cx="180"
+                cy="113"
+                r="21"
+                fill="#815638"
+            />
+
+            <circle
+                cx="292"
+                cy="112"
+                r="21"
+                fill="#815638"
+            />
+
+
+            <!-- MATA -->
+
+            <circle
+                cx="208"
+                cy="166"
+                r="6"
+                fill="#33251e"
+            />
+
+            <circle
+                cx="265"
+                cy="166"
+                r="6"
+                fill="#33251e"
+            />
+
+
+            <!-- PIPI -->
+
+            <ellipse
+                cx="195"
+                cy="190"
+                rx="14"
+                ry="7"
+                fill="#c98570"
+                opacity=".65"
+            />
+
+            <ellipse
+                cx="278"
+                cy="190"
+                rx="14"
+                ry="7"
+                fill="#c98570"
+                opacity=".65"
+            />
+
+
+            <!-- HIDUNG -->
+
+            <ellipse
+                cx="238"
+                cy="190"
+                rx="19"
+                ry="13"
+                fill="#493024"
+            />
+
+
+            <!-- MULUT -->
+
+            <path
+                d="
+                    M238 200
+                    C238 210 228 214 221 211
+                    M238 200
+                    C238 210 248 214 255 211
+                "
+                fill="none"
+                stroke="#493024"
+                stroke-width="3"
+                stroke-linecap="round"
+            />
+
+
+            <!-- TANGAN -->
+
+            <ellipse
+                cx="113"
+                cy="230"
+                rx="32"
+                ry="14"
+                fill="#916141"
+                transform="rotate(25 113 230)"
+            />
+
+            <ellipse
+                cx="312"
+                cy="230"
+                rx="32"
+                ry="14"
+                fill="#916141"
+                transform="rotate(-25 312 230)"
+            />
+
+
+            <!-- BUNGA -->
+
             <g
                 transform="translate(245 15)"
-                class="flower"
             >
 
                 <line
@@ -513,148 +945,6 @@ button:active{
 
             </g>
 
-
-            <!-- badan -->
-
-            <ellipse
-                cx="205"
-                cy="270"
-                rx="130"
-                ry="75"
-                fill="#9a6847"
-            />
-
-
-            <!-- kaki -->
-
-            <ellipse
-                cx="115"
-                cy="325"
-                rx="35"
-                ry="19"
-                fill="#805536"
-            />
-
-            <ellipse
-                cx="270"
-                cy="325"
-                rx="35"
-                ry="19"
-                fill="#805536"
-            />
-
-
-            <!-- kepala -->
-
-            <ellipse
-                cx="235"
-                cy="175"
-                rx="82"
-                ry="76"
-                fill="#ad7650"
-            />
-
-
-            <!-- telinga -->
-
-            <circle
-                cx="180"
-                cy="113"
-                r="21"
-                fill="#815638"
-            />
-
-            <circle
-                cx="292"
-                cy="112"
-                r="21"
-                fill="#815638"
-            />
-
-
-            <!-- mata -->
-
-            <circle
-                cx="208"
-                cy="166"
-                r="6"
-                fill="#33251e"
-            />
-
-            <circle
-                cx="265"
-                cy="166"
-                r="6"
-                fill="#33251e"
-            />
-
-
-            <!-- pipi -->
-
-            <ellipse
-                cx="195"
-                cy="190"
-                rx="14"
-                ry="7"
-                fill="#c98570"
-                opacity=".65"
-            />
-
-            <ellipse
-                cx="278"
-                cy="190"
-                rx="14"
-                ry="7"
-                fill="#c98570"
-                opacity=".65"
-            />
-
-
-            <!-- hidung -->
-
-            <ellipse
-                cx="238"
-                cy="190"
-                rx="19"
-                ry="13"
-                fill="#493024"
-            />
-
-
-            <!-- mulut -->
-
-            <path
-                d="M238 200
-                   C238 210 228 214 221 211
-                   M238 200
-                   C238 210 248 214 255 211"
-                fill="none"
-                stroke="#493024"
-                stroke-width="3"
-                stroke-linecap="round"
-            />
-
-
-            <!-- tangan -->
-
-            <ellipse
-                cx="113"
-                cy="230"
-                rx="32"
-                ry="14"
-                fill="#916141"
-                transform="rotate(25 113 230)"
-            />
-
-            <ellipse
-                cx="312"
-                cy="230"
-                rx="32"
-                ry="14"
-                fill="#916141"
-                transform="rotate(-25 312 230)"
-            />
-
         </svg>
 
     </div>
@@ -665,13 +955,14 @@ button:active{
 
 
 
-<!-- ==================================================
-     2. SECOND
-================================================== -->
+<!-- =====================================================
+     HALAMAN 2
+===================================================== -->
 
 <section id="s2">
 
 <div class="panel two">
+
 
     <div class="content">
 
@@ -684,24 +975,26 @@ button:active{
             Aku cuma mau kasih ini.
         </p>
 
-        <button onclick="go('s3')">
+
+        <button
+            onclick="go('s3')"
+        >
             Lihat →
         </button>
 
     </div>
 
 
-    <!-- CAPYBARA WALK -->
+    <!-- KAPIBARA -->
 
     <div class="capybara capy-two">
 
         <svg
-            class="capy-svg"
             viewBox="0 0 420 320"
             xmlns="http://www.w3.org/2000/svg"
         >
 
-            <!-- badan -->
+            <!-- BADAN -->
 
             <ellipse
                 cx="205"
@@ -711,7 +1004,8 @@ button:active{
                 fill="#9b6948"
             />
 
-            <!-- kaki -->
+
+            <!-- KAKI -->
 
             <ellipse
                 cx="125"
@@ -729,7 +1023,8 @@ button:active{
                 fill="#7d5336"
             />
 
-            <!-- kepala -->
+
+            <!-- KEPALA -->
 
             <ellipse
                 cx="150"
@@ -739,7 +1034,8 @@ button:active{
                 fill="#ad7650"
             />
 
-            <!-- telinga -->
+
+            <!-- TELINGA -->
 
             <circle
                 cx="100"
@@ -755,7 +1051,8 @@ button:active{
                 fill="#805536"
             />
 
-            <!-- mata -->
+
+            <!-- MATA -->
 
             <circle
                 cx="128"
@@ -771,7 +1068,8 @@ button:active{
                 fill="#34261f"
             />
 
-            <!-- hidung -->
+
+            <!-- HIDUNG -->
 
             <ellipse
                 cx="151"
@@ -781,20 +1079,24 @@ button:active{
                 fill="#493024"
             />
 
-            <!-- mulut -->
+
+            <!-- MULUT -->
 
             <path
-                d="M151 176
-                   C151 187 142 189 137 186
-                   M151 176
-                   C151 187 160 189 165 186"
+                d="
+                    M151 176
+                    C151 187 142 189 137 186
+                    M151 176
+                    C151 187 160 189 165 186
+                "
                 fill="none"
                 stroke="#493024"
                 stroke-width="3"
                 stroke-linecap="round"
             />
 
-            <!-- tangan -->
+
+            <!-- TANGAN -->
 
             <ellipse
                 cx="305"
@@ -815,13 +1117,14 @@ button:active{
 
 
 
-<!-- ==================================================
-     3. MESSAGE
-================================================== -->
+<!-- =====================================================
+     HALAMAN 3
+===================================================== -->
 
 <section id="s3">
 
 <div class="panel three">
+
 
     <span class="decor d1">
         ✦
@@ -845,13 +1148,18 @@ button:active{
             </p>
 
             <p>
-                Cuma pengen kasih sesuatu kecil.
+                Cuma pengen kasih
+                sesuatu kecil.
             </p>
 
-            <p style="margin-top:20px">
+            <p
+                style="
+                    margin-top:20px;
+                "
+            >
                 <b>
-                    Terima kasih sudah jadi bagian
-                    yang berarti.
+                    Terima kasih sudah
+                    jadi bagian yang berarti.
                 </b>
             </p>
 
@@ -859,7 +1167,10 @@ button:active{
 
 
         <button
-            onclick="go('s4'); sparkle()"
+            onclick="
+                go('s4');
+                sparkle();
+            "
         >
             Lanjut →
         </button>
@@ -867,15 +1178,16 @@ button:active{
     </div>
 
 
-    <!-- CAPYBARA SANTAI -->
+    <!-- KAPIBARA SANTAI -->
 
     <div class="capybara capy-three">
 
         <svg
-            class="capy-svg"
             viewBox="0 0 400 350"
             xmlns="http://www.w3.org/2000/svg"
         >
+
+            <!-- BADAN -->
 
             <ellipse
                 cx="205"
@@ -884,6 +1196,9 @@ button:active{
                 ry="65"
                 fill="#9a6847"
             />
+
+
+            <!-- KAKI -->
 
             <ellipse
                 cx="110"
@@ -901,6 +1216,9 @@ button:active{
                 fill="#7e5437"
             />
 
+
+            <!-- KEPALA -->
+
             <ellipse
                 cx="235"
                 cy="165"
@@ -908,6 +1226,9 @@ button:active{
                 ry="76"
                 fill="#ad7650"
             />
+
+
+            <!-- TELINGA -->
 
             <circle
                 cx="180"
@@ -923,6 +1244,9 @@ button:active{
                 fill="#805536"
             />
 
+
+            <!-- MATA -->
+
             <circle
                 cx="208"
                 cy="160"
@@ -937,6 +1261,9 @@ button:active{
                 fill="#34261f"
             />
 
+
+            <!-- HIDUNG -->
+
             <ellipse
                 cx="235"
                 cy="187"
@@ -945,20 +1272,28 @@ button:active{
                 fill="#493024"
             />
 
+
+            <!-- MULUT -->
+
             <path
-                d="M235 198
-                   C235 208 226 211 220 208
-                   M235 198
-                   C235 208 244 211 250 208"
+                d="
+                    M235 198
+                    C235 208 226 211 220 208
+                    M235 198
+                    C235 208 244 211 250 208
+                "
                 fill="none"
                 stroke="#493024"
                 stroke-width="3"
                 stroke-linecap="round"
             />
 
-            <!-- cup -->
 
-            <g transform="translate(125 195)">
+            <!-- CUP -->
+
+            <g
+                transform="translate(125 195)"
+            >
 
                 <rect
                     x="0"
@@ -970,18 +1305,23 @@ button:active{
                 />
 
                 <path
-                    d="M55 13
-                       C82 8 82 48 55 43"
+                    d="
+                        M55 13
+                        C82 8 82 48 55 43
+                    "
                     fill="none"
                     stroke="#c47c67"
                     stroke-width="8"
                 />
 
                 <path
-                    d="M13 -7
-                       C8 -20 20 -22 20 -7
-                       M30 -7
-                       C25 -20 37 -22 37 -7"
+                    d="
+                        M13 -7
+                        C8 -20 20 -22 20 -7
+
+                        M30 -7
+                        C25 -20 37 -22 37 -7
+                    "
                     fill="none"
                     stroke="#fff3e8"
                     stroke-width="5"
@@ -1000,13 +1340,14 @@ button:active{
 
 
 
-<!-- ==================================================
-     4. FINAL
-================================================== -->
+<!-- =====================================================
+     HALAMAN 4 / FINAL
+===================================================== -->
 
 <section id="s4">
 
 <div class="panel four">
+
 
     <div class="content">
 
@@ -1014,9 +1355,11 @@ button:active{
             Udah, itu aja.
         </h2>
 
+
         <p>
             Semoga kamu suka.
         </p>
+
 
         <p
             style="
@@ -1024,30 +1367,55 @@ button:active{
                 font-size:16px;
             "
         >
-            Sampai ketemu lagi.
+            Tapi...
         </p>
 
-        <button
-            onclick="sparkle()"
-            aria-label="surprise"
-        >
-            ♡
-        </button>
+
+        <!-- TOMBOL KANGEN -->
+
+        <div class="final-buttons">
+
+
+            <button
+                onclick="kangenBiasa()"
+                class="btn-kangen"
+            >
+                🤎 Klik kalau udah kangen
+            </button>
+
+
+            <button
+                onclick="kangenBanget()"
+                class="btn-kangen banget"
+            >
+                🫶 Klik kalau udah kangen banget
+            </button>
+
+
+        </div>
+
+
+        <!-- RESPONSE -->
+
+        <div
+            id="response"
+            class="response"
+        ></div>
+
 
     </div>
 
 
-    <!-- CAPYBARA FINAL -->
+    <!-- KAPIBARA FINAL -->
 
     <div class="capybara capy-four">
 
         <svg
-            class="capy-svg"
             viewBox="0 0 430 350"
             xmlns="http://www.w3.org/2000/svg"
         >
 
-            <!-- tanah -->
+            <!-- TANAH -->
 
             <ellipse
                 cx="215"
@@ -1058,7 +1426,8 @@ button:active{
                 opacity=".6"
             />
 
-            <!-- badan -->
+
+            <!-- BADAN -->
 
             <ellipse
                 cx="220"
@@ -1068,7 +1437,8 @@ button:active{
                 fill="#986747"
             />
 
-            <!-- kepala -->
+
+            <!-- KEPALA -->
 
             <ellipse
                 cx="250"
@@ -1078,7 +1448,8 @@ button:active{
                 fill="#ad7650"
             />
 
-            <!-- telinga -->
+
+            <!-- TELINGA -->
 
             <circle
                 cx="195"
@@ -1094,7 +1465,8 @@ button:active{
                 fill="#805536"
             />
 
-            <!-- mata -->
+
+            <!-- MATA -->
 
             <circle
                 cx="222"
@@ -1110,7 +1482,8 @@ button:active{
                 fill="#34261f"
             />
 
-            <!-- hidung -->
+
+            <!-- HIDUNG -->
 
             <ellipse
                 cx="250"
@@ -1120,20 +1493,24 @@ button:active{
                 fill="#493024"
             />
 
-            <!-- senyum -->
+
+            <!-- SENYUM -->
 
             <path
-                d="M250 190
-                   C250 201 241 204 235 201
-                   M250 190
-                   C250 201 259 204 265 201"
+                d="
+                    M250 190
+                    C250 201 241 204 235 201
+                    M250 190
+                    C250 201 259 204 265 201
+                "
                 fill="none"
                 stroke="#493024"
                 stroke-width="3"
                 stroke-linecap="round"
             />
 
-            <!-- kaki -->
+
+            <!-- KAKI -->
 
             <ellipse
                 cx="135"
@@ -1151,7 +1528,8 @@ button:active{
                 fill="#7e5437"
             />
 
-            <!-- tangan -->
+
+            <!-- TANGAN -->
 
             <ellipse
                 cx="145"
@@ -1176,6 +1554,8 @@ button:active{
     </div>
 
 
+    <!-- FOOTER -->
+
     <div class="footer">
         Dibuat dengan ♡ untuk kamu
     </div>
@@ -1186,11 +1566,16 @@ button:active{
 
 
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
-/* =========================
-   NAVIGASI
-========================= */
+
+/* =====================================================
+   PINDAH HALAMAN
+===================================================== */
 
 function go(id){
 
@@ -1203,59 +1588,150 @@ function go(id){
 }
 
 
-/* =========================
+
+/* =====================================================
+   RESPONSE KANGEN
+===================================================== */
+
+function showResponse(text){
+
+    const response =
+        document.getElementById(
+            'response'
+        );
+
+
+    response.textContent =
+        text;
+
+
+    response.classList.remove(
+        'show'
+    );
+
+
+    /* restart animation */
+
+    void response.offsetWidth;
+
+
+    response.classList.add(
+        'show'
+    );
+
+
+    sparkle();
+
+}
+
+
+
+/* =====================================================
+   KANGEN BIASA
+===================================================== */
+
+function kangenBiasa(){
+
+    showResponse(
+        'Hehe... ternyata kangen juga 🤎'
+    );
+
+}
+
+
+
+/* =====================================================
+   KANGEN BANGET
+===================================================== */
+
+function kangenBanget(){
+
+    showResponse(
+        'Nah... kalau yang ini harus ketemu kayaknya 🫶'
+    );
+
+}
+
+
+
+/* =====================================================
    SPARKLE
-========================= */
+===================================================== */
 
 function sparkle(){
 
-    const symbols=[
+    const symbols = [
         '✦',
         '♡',
         '✧',
         '·'
     ];
 
+
     for(
-        let i=0;
-        i<25;
+        let i = 0;
+        i < 25;
         i++
     ){
 
-        const s=
-            document.createElement('span');
+        const s =
+            document.createElement(
+                'span'
+            );
 
-        s.className='spark';
 
-        s.textContent=
+        s.className =
+            'spark';
+
+
+        s.textContent =
             symbols[
                 Math.floor(
-                    Math.random()*symbols.length
+                    Math.random() *
+                    symbols.length
                 )
             ];
 
-        s.style.left='50%';
-        s.style.top='50%';
 
-        s.style.fontSize=
-            (14+Math.random()*20)+'px';
+        s.style.left =
+            '50%';
 
-        document.body.appendChild(s);
+        s.style.top =
+            '50%';
 
-        requestAnimationFrame(()=>{
 
-            s.style.transform=
-                `translate(
-                    ${Math.random()*360-180}px,
-                    ${Math.random()*360-180}px
-                )`;
+        s.style.fontSize =
+            (
+                14 +
+                Math.random() * 20
+            ) + 'px';
 
-            s.style.opacity='0';
 
-        });
+        document.body.appendChild(
+            s
+        );
+
+
+        requestAnimationFrame(
+            ()=>{
+
+                s.style.transform =
+                    `translate(
+                        ${Math.random()*360-180}px,
+                        ${Math.random()*360-180}px
+                    )`;
+
+                s.style.opacity =
+                    '0';
+
+            }
+        );
+
 
         setTimeout(
-            ()=>s.remove(),
+            ()=>{
+                s.remove();
+            },
             1200
         );
 
