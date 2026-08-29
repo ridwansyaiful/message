@@ -1,1667 +1,235 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hei, kamu.</title>
-
-<style>
-
-/* =====================================================
-   DASAR
-===================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
-
-:root{
-    --brown:#68482f;
-    --brown-dark:#543923;
-    --cream:#fbf0dc;
-}
-
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    background:#f4eadb;
-    color:var(--brown);
-    font-family:'Quicksand',sans-serif;
-}
-
-
-/* =====================================================
-   SECTION
-===================================================== */
-
-section{
-    min-height:100vh;
-    padding:12px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.panel{
-    width:min(1050px,100%);
-    min-height:700px;
-
-    border-radius:28px;
-
-    position:relative;
-    overflow:hidden;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    box-shadow:
-        0 15px 45px rgba(80,55,35,.10);
-}
-
-
-/* =====================================================
-   BACKGROUND
-===================================================== */
-
-.one{
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(255,255,255,.5),
-            transparent 25%
-        ),
-        linear-gradient(
-            135deg,
-            #fff1dc,
-            #f6e5cc
-        );
-}
-
-.two{
-    background:
-        radial-gradient(
-            circle at 80% 20%,
-            rgba(255,255,255,.5),
-            transparent 25%
-        ),
-        linear-gradient(
-            135deg,
-            #fff4e5,
-            #f8ead9
-        );
-}
-
-.three{
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(255,255,255,.35),
-            transparent 25%
-        ),
-        linear-gradient(
-            135deg,
-            #ffd8c8,
-            #f7c6b7
-        );
-}
-
-.four{
-    background:
-        linear-gradient(
-            180deg,
-            #d6c0c9 0%,
-            #f2d8c0 55%,
-            #c9b87e 100%
-        );
-}
-
-
-/* =====================================================
-   TEXT
-===================================================== */
-
-.content{
-    position:relative;
-    z-index:5;
-
-    width:min(560px,90%);
-
-    padding:25px;
-
-    animation:
-        appear .9s ease both;
-}
-
-h1{
-    font-size:
-        clamp(46px,9vw,78px);
-
-    line-height:1;
-
-    margin:0 0 18px;
-
-    letter-spacing:-2px;
-}
-
-h2{
-    font-size:
-        clamp(32px,6vw,52px);
-
-    line-height:1.12;
-
-    margin:0 0 18px;
-}
-
-p{
-    font-size:19px;
-
-    line-height:1.7;
-
-    margin:8px 0;
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-button{
-
-    border:0;
-
-    background:
-        var(--brown);
-
-    color:white;
-
-    padding:
-        14px 31px;
-
-    border-radius:
-        999px;
-
-    margin-top:
-        25px;
-
-    font:
-        600 17px
-        'Quicksand',
-        sans-serif;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 8px 20px
-        rgba(84,58,38,.16);
-
-    transition:
-        transform .25s,
-        box-shadow .25s,
-        background .25s;
-}
-
-button:hover{
-
-    transform:
-        translateY(-3px);
-
-    background:
-        var(--brown-dark);
-
-    box-shadow:
-        0 12px 25px
-        rgba(84,58,38,.22);
-}
-
-button:active{
-
-    transform:
-        scale(.96);
-}
-
-
-/* =====================================================
-   KAPIBARA
-===================================================== */
-
-.capybara{
-
-    position:absolute;
-
-    z-index:3;
-
-    animation:
-        capyFloat 4s
-        ease-in-out
-        infinite;
-
-    filter:
-        drop-shadow(
-            0 12px 10px
-            rgba(80,55,35,.12)
-        );
-}
-
-.capy-one{
-    width:330px;
-    right:2%;
-    bottom:-8px;
-}
-
-.capy-two{
-    width:380px;
-    left:-15px;
-    bottom:0;
-    animation-delay:.3s;
-}
-
-.capy-three{
-    width:340px;
-    right:0;
-    bottom:0;
-    animation-delay:.6s;
-}
-
-.capy-four{
-    width:430px;
-    right:-10px;
-    bottom:-15px;
-    animation-delay:.8s;
-}
-
-
-@keyframes capyFloat{
-
-    0%,100%{
-        transform:translateY(0);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sedang Dalam Pengerjaan 🐾</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --brown-text: #5C3D2E;
+      --brown-dark: #432B1D;
+      --brown-btn: #674730;
+      --bg-warm: #FDEED9;
+      --accent-pink: #E58C8A;
+      --accent-yellow: #F6C85F;
+      --capy-main: #B88659;
+      --capy-dark: #9E6F45;
+      --capy-line: #422817;
     }
 
-    50%{
-        transform:translateY(-10px);
-    }
-}
-
-
-/* =====================================================
-   DEKORASI
-===================================================== */
-
-.decor{
-
-    position:absolute;
-
-    font-size:28px;
-
-    opacity:.6;
-
-    animation:
-        drift 5s
-        ease-in-out
-        infinite;
-}
-
-.d1{
-    left:8%;
-    top:12%;
-}
-
-.d2{
-    right:13%;
-    top:18%;
-    animation-delay:1s;
-}
-
-.d3{
-    left:12%;
-    bottom:16%;
-    animation-delay:2s;
-}
-
-@keyframes drift{
-
-    50%{
-        transform:
-            translateY(-12px)
-            rotate(7deg);
-    }
-}
-
-
-/* =====================================================
-   NOTE
-===================================================== */
-
-.note{
-
-    background:
-        rgba(
-            255,
-            250,
-            240,
-            .95
-        );
-
-    padding:
-        38px 34px;
-
-    border-radius:
-        12px;
-
-    box-shadow:
-        0 18px 35px
-        rgba(108,69,36,.12);
-
-    transform:
-        rotate(-1deg);
-}
-
-.note h2{
-    color:#d9786a;
-}
-
-.note p{
-    font-size:19px;
-}
-
-
-/* =====================================================
-   FINAL BUTTONS
-===================================================== */
-
-.final-buttons{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:2px;
-
-    margin-top:10px;
-}
-
-.btn-kangen{
-
-    width:300px;
-
-    font-size:15px;
-
-    padding:
-        13px 20px;
-}
-
-.btn-kangen.banget{
-
-    background:#8d5b45;
-}
-
-
-/* =====================================================
-   RESPONSE
-===================================================== */
-
-.response{
-
-    min-height:32px;
-
-    margin-top:18px;
-
-    font-size:17px;
-
-    font-weight:600;
-
-    opacity:0;
-
-    transform:
-        translateY(8px);
-
-    transition:
-        .4s ease;
-}
-
-.response.show{
-
-    opacity:1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.footer{
-
-    position:absolute;
-
-    bottom:0;
-
-    left:0;
-
-    right:0;
-
-    background:
-        rgba(89,60,38,.88);
-
-    color:white;
-
-    padding:12px;
-
-    font-size:14px;
-
-    z-index:8;
-}
-
-
-/* =====================================================
-   SPARKLE
-===================================================== */
-
-.spark{
-
-    position:fixed;
-
-    z-index:50;
-
-    pointer-events:none;
-
-    font-size:22px;
-
-    transition:
-        1.1s
-        ease-out;
-}
-
-
-/* =====================================================
-   ANIMATION
-===================================================== */
-
-@keyframes appear{
-
-    from{
-        opacity:0;
-        transform:translateY(25px);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:700px){
-
-    section{
-        padding:8px;
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #ECE5DC;
+      color: var(--brown-text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+      user-select: none;
     }
 
-    .panel{
-        min-height:720px;
-        border-radius:22px;
+    /* Container Utama */
+    .dev-container {
+      width: 100%;
+      max-width: 540px;
+      background: radial-gradient(circle at 50% 30%, #FFF8EE 0%, var(--bg-warm) 100%);
+      border-radius: 32px;
+      border: 8px solid #FFFDF9;
+      box-shadow: 0 20px 50px rgba(92, 61, 46, 0.12);
+      padding: 50px 32px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .content{
-        margin-top:-110px;
+    /* Badge Status */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(246, 200, 95, 0.25);
+      border: 1.5px solid var(--accent-yellow);
+      color: #7A561D;
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 16px;
     }
 
-    .capy-one,
-    .capy-three{
-        width:235px;
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #E2A01C;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
     }
 
-    .capy-two{
-        width:275px;
-        left:-35px;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.5; }
     }
 
-    .capy-four{
-        width:295px;
-        right:-20px;
+    /* Teks Judul & Deskripsi */
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.3rem);
+      font-weight: 800;
+      color: var(--brown-text);
+      line-height: 1.2;
+      margin-bottom: 8px;
     }
 
-    p{
-        font-size:17px;
+    p.subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #7D5A44;
+      line-height: 1.6;
+      max-width: 400px;
+      margin: 0 auto 10px;
     }
 
-    .note{
-        padding:30px 22px;
+    /* Ilustrasi SVG */
+    .art-container {
+      width: 100%;
+      max-width: 270px;
+      height: 230px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0 15px;
+      filter: drop-shadow(0 10px 15px rgba(80, 55, 35, 0.12));
+      animation: float 4s ease-in-out infinite;
     }
 
-    .note p{
-        font-size:17px;
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
-    .btn-kangen{
-        width:270px;
-        font-size:14px;
+    /* Progress Bar */
+    .progress-section {
+      width: 100%;
+      max-width: 340px;
+      margin: 10px 0 20px;
     }
 
-}
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #8C664C;
+      margin-bottom: 6px;
+    }
 
-</style>
+    .progress-bar-bg {
+      width: 100%;
+      height: 12px;
+      background: #EFE0D0;
+      border-radius: 999px;
+      overflow: hidden;
+      padding: 2px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 68%;
+      background: linear-gradient(90deg, #E58C8A, #F6C85F);
+      border-radius: 999px;
+      animation: progressAnim 2s ease-out;
+    }
+
+    @keyframes progressAnim {
+      from { width: 0%; }
+      to { width: 68%; }
+    }
+
+    /* Footer Note */
+    .footer-note {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #9C7862;
+      margin-top: 10px;
+      letter-spacing: 0.3px;
+    }
+
+    .heart-icon {
+      color: var(--accent-pink);
+      display: inline-block;
+    }
+  </style>
 </head>
-
-
 <body>
 
-
-<!-- =====================================================
-     HALAMAN 1
-===================================================== -->
-
-<section id="s1">
-
-<div class="panel one">
-
-    <span class="decor d1">🍃</span>
-    <span class="decor d2">✦</span>
-    <span class="decor d3">🌿</span>
-
-
-    <div class="content">
-
-        <h1>
-            Hei, kamu.
-        </h1>
-
-        <p>
-            Ada sesuatu buat kamu.
-        </p>
-
-        <p style="
-            opacity:.65;
-            font-size:15px;
-        ">
-            Nggak perlu penasaran
-            lama-lama.
-        </p>
-
-        <button onclick="go('s2')">
-            Buka →
-        </button>
-
+  <div class="dev-container">
+    
+    <div class="status-badge">
+      <div class="pulse-dot"></div>
+      Sedang Tahap Pengembangan
     </div>
 
+    <h1>Sabar ya, lagi disiapin!</h1>
+    <p class="subtitle">
+      Halaman ini sedang dalam proses pengerjaan supaya hasilnya lebih maksimal dan nyaman buat kamu.
+    </p>
 
-    <!-- KAPIBARA + BUNGA -->
+    <div class="art-container">
+      <svg viewBox="0 0 240 220" width="100%" height="100%">
+        <ellipse cx="120" cy="195" rx="80" ry="14" fill="#E2CFBA" opacity="0.6"/>
 
-    <div class="capybara capy-one">
+        <ellipse cx="120" cy="135" rx="65" ry="50" fill="var(--capy-main)" />
+        
+        <path d="M 60,65 C 30,85 35,125 65,128 C 88,128 105,115 105,85 C 105,60 85,55 60,65 Z" fill="var(--capy-main)" />
+        
+        <path d="M 45,85 C 32,95 38,120 58,122 C 72,122 80,108 80,85 Z" fill="var(--capy-dark)" />
+        
+        <path d="M 72,82 Q 78,76 84,82" stroke="var(--capy-line)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        
+        <ellipse cx="50" cy="98" rx="3" ry="5" fill="var(--capy-line)" />
+        <line x1="50" y1="103" x2="50" y2="112" stroke="var(--capy-line)" stroke-width="2" stroke-linecap="round"/>
 
-        <svg
-            viewBox="0 0 400 360"
-            xmlns="http://www.w3.org/2000/svg"
-        >
+        <circle cx="108" cy="65" r="7" fill="var(--capy-dark)" />
 
-            <!-- badan -->
+        <path d="M 80,140 Q 75,175 90,175" stroke="var(--capy-dark)" stroke-width="12" stroke-linecap="round" fill="none"/>
+        <path d="M 130,145 Q 135,175 145,172" stroke="var(--capy-dark)" stroke-width="12" stroke-linecap="round" fill="none"/>
 
-            <ellipse
-                cx="205"
-                cy="270"
-                rx="130"
-                ry="75"
-                fill="#9a6847"
-            />
-
-            <!-- kaki -->
-
-            <ellipse
-                cx="115"
-                cy="325"
-                rx="35"
-                ry="19"
-                fill="#805536"
-            />
-
-            <ellipse
-                cx="270"
-                cy="325"
-                rx="35"
-                ry="19"
-                fill="#805536"
-            />
-
-            <!-- kepala -->
-
-            <ellipse
-                cx="235"
-                cy="175"
-                rx="82"
-                ry="76"
-                fill="#ad7650"
-            />
-
-            <!-- telinga -->
-
-            <circle
-                cx="180"
-                cy="113"
-                r="21"
-                fill="#815638"
-            />
-
-            <circle
-                cx="292"
-                cy="112"
-                r="21"
-                fill="#815638"
-            />
-
-            <!-- mata -->
-
-            <circle
-                cx="208"
-                cy="166"
-                r="6"
-                fill="#33251e"
-            />
-
-            <circle
-                cx="265"
-                cy="166"
-                r="6"
-                fill="#33251e"
-            />
-
-            <!-- pipi -->
-
-            <ellipse
-                cx="195"
-                cy="190"
-                rx="14"
-                ry="7"
-                fill="#c98570"
-                opacity=".65"
-            />
-
-            <ellipse
-                cx="278"
-                cy="190"
-                rx="14"
-                ry="7"
-                fill="#c98570"
-                opacity=".65"
-            />
-
-            <!-- hidung -->
-
-            <ellipse
-                cx="238"
-                cy="190"
-                rx="19"
-                ry="13"
-                fill="#493024"
-            />
-
-            <!-- mulut -->
-
-            <path
-                d="
-                M238 200
-                C238 210 228 214 221 211
-
-                M238 200
-                C238 210 248 214 255 211
-                "
-                fill="none"
-                stroke="#493024"
-                stroke-width="3"
-                stroke-linecap="round"
-            />
-
-            <!-- tangan -->
-
-            <ellipse
-                cx="113"
-                cy="230"
-                rx="32"
-                ry="14"
-                fill="#916141"
-                transform="rotate(25 113 230)"
-            />
-
-            <ellipse
-                cx="312"
-                cy="230"
-                rx="32"
-                ry="14"
-                fill="#916141"
-                transform="rotate(-25 312 230)"
-            />
-
-            <!-- bunga -->
-
-            <g transform="translate(245 15)">
-
-                <line
-                    x1="35"
-                    y1="65"
-                    x2="65"
-                    y2="125"
-                    stroke="#728253"
-                    stroke-width="8"
-                    stroke-linecap="round"
-                />
-
-                <circle
-                    cx="35"
-                    cy="55"
-                    r="17"
-                    fill="#f49c91"
-                />
-
-                <circle
-                    cx="65"
-                    cy="45"
-                    r="17"
-                    fill="#f5b19e"
-                />
-
-                <circle
-                    cx="70"
-                    cy="75"
-                    r="17"
-                    fill="#ef8f87"
-                />
-
-                <circle
-                    cx="43"
-                    cy="82"
-                    r="17"
-                    fill="#f6b5a2"
-                />
-
-                <circle
-                    cx="52"
-                    cy="64"
-                    r="10"
-                    fill="#e9b65b"
-                />
-
-            </g>
-
-        </svg>
-
+        <g transform="translate(62, 28)">
+          <path d="M 0,28 C 0,8 48,8 48,28 Z" fill="#F6C85F" />
+          <path d="M -6,28 Q 24,24 54,28" stroke="#E2A01C" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <path d="M 10,18 Q 20,12 32,14" stroke="#FFF7D6" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </g>
+      </svg>
     </div>
 
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     HALAMAN 2
-===================================================== -->
-
-<section id="s2">
-
-<div class="panel two">
-
-
-    <div class="content">
-
-        <h2>
-            Sebenarnya<br>
-            nggak ada apa-apa.
-        </h2>
-
-        <p>
-            Aku cuma mau kasih ini.
-        </p>
-
-        <button onclick="go('s3')">
-            Lihat →
-        </button>
-
+    <div class="progress-section">
+      <div class="progress-info">
+        <span>Progress Pengerjaan</span>
+        <span>68%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill"></div>
+      </div>
     </div>
 
-
-    <!-- KAPIBARA -->
-
-    <div class="capybara capy-two">
-
-        <svg
-            viewBox="0 0 420 320"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-
-            <!-- badan -->
-
-            <ellipse
-                cx="205"
-                cy="215"
-                rx="125"
-                ry="68"
-                fill="#9b6948"
-            />
-
-            <!-- kaki -->
-
-            <ellipse
-                cx="125"
-                cy="270"
-                rx="31"
-                ry="17"
-                fill="#7d5336"
-            />
-
-            <ellipse
-                cx="270"
-                cy="270"
-                rx="31"
-                ry="17"
-                fill="#7d5336"
-            />
-
-            <!-- kepala -->
-
-            <ellipse
-                cx="150"
-                cy="145"
-                rx="75"
-                ry="70"
-                fill="#ad7650"
-            />
-
-            <!-- telinga -->
-
-            <circle
-                cx="100"
-                cy="88"
-                r="20"
-                fill="#805536"
-            />
-
-            <circle
-                cx="190"
-                cy="87"
-                r="20"
-                fill="#805536"
-            />
-
-            <!-- mata -->
-
-            <circle
-                cx="128"
-                cy="140"
-                r="6"
-                fill="#34261f"
-            />
-
-            <circle
-                cx="176"
-                cy="140"
-                r="6"
-                fill="#34261f"
-            />
-
-            <!-- hidung -->
-
-            <ellipse
-                cx="151"
-                cy="166"
-                rx="18"
-                ry="12"
-                fill="#493024"
-            />
-
-            <!-- mulut -->
-
-            <path
-                d="
-                M151 176
-                C151 187 142 189 137 186
-
-                M151 176
-                C151 187 160 189 165 186
-                "
-                fill="none"
-                stroke="#493024"
-                stroke-width="3"
-                stroke-linecap="round"
-            />
-
-            <!-- tangan -->
-
-            <ellipse
-                cx="305"
-                cy="190"
-                rx="30"
-                ry="13"
-                fill="#8e5e40"
-                transform="rotate(-30 305 190)"
-            />
-
-        </svg>
-
+    <div class="footer-note">
+      Dibuat dengan <span class="heart-icon">❤️</span> sambil ngopi santai
     </div>
 
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     HALAMAN 3
-===================================================== -->
-
-<section id="s3">
-
-<div class="panel three">
-
-    <span class="decor d1">
-        ✦
-    </span>
-
-    <span class="decor d2">
-        ♡
-    </span>
-
-
-    <div class="content">
-
-        <div class="note">
-
-            <h2>
-                Buat kamu.
-            </h2>
-
-            <p>
-                Nggak ada alasan khusus.
-            </p>
-
-            <p>
-                Cuma pengen kasih
-                sesuatu kecil.
-            </p>
-
-            <p style="margin-top:20px">
-
-                <b>
-                    Terima kasih sudah
-                    jadi bagian yang berarti.
-                </b>
-
-            </p>
-
-        </div>
-
-
-        <button
-            onclick="
-                go('s4');
-                sparkle();
-            "
-        >
-            Lanjut →
-        </button>
-
-    </div>
-
-
-    <!-- KAPIBARA SANTAI -->
-
-    <div class="capybara capy-three">
-
-        <svg
-            viewBox="0 0 400 350"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-
-            <!-- badan -->
-
-            <ellipse
-                cx="205"
-                cy="260"
-                rx="130"
-                ry="65"
-                fill="#9a6847"
-            />
-
-            <!-- kaki -->
-
-            <ellipse
-                cx="110"
-                cy="310"
-                rx="32"
-                ry="17"
-                fill="#7e5437"
-            />
-
-            <ellipse
-                cx="280"
-                cy="310"
-                rx="32"
-                ry="17"
-                fill="#7e5437"
-            />
-
-            <!-- kepala -->
-
-            <ellipse
-                cx="235"
-                cy="165"
-                rx="82"
-                ry="76"
-                fill="#ad7650"
-            />
-
-            <!-- telinga -->
-
-            <circle
-                cx="180"
-                cy="105"
-                r="21"
-                fill="#805536"
-            />
-
-            <circle
-                cx="292"
-                cy="105"
-                r="21"
-                fill="#805536"
-            />
-
-            <!-- mata -->
-
-            <circle
-                cx="208"
-                cy="160"
-                r="6"
-                fill="#34261f"
-            />
-
-            <circle
-                cx="264"
-                cy="160"
-                r="6"
-                fill="#34261f"
-            />
-
-            <!-- hidung -->
-
-            <ellipse
-                cx="235"
-                cy="187"
-                rx="19"
-                ry="13"
-                fill="#493024"
-            />
-
-            <!-- mulut -->
-
-            <path
-                d="
-                M235 198
-                C235 208 226 211 220 208
-
-                M235 198
-                C235 208 244 211 250 208
-                "
-                fill="none"
-                stroke="#493024"
-                stroke-width="3"
-                stroke-linecap="round"
-            />
-
-            <!-- cup -->
-
-            <g transform="translate(125 195)">
-
-                <rect
-                    x="0"
-                    y="0"
-                    width="55"
-                    height="55"
-                    rx="9"
-                    fill="#d58f78"
-                />
-
-                <path
-                    d="
-                    M55 13
-                    C82 8 82 48 55 43
-                    "
-                    fill="none"
-                    stroke="#c47c67"
-                    stroke-width="8"
-                />
-
-                <path
-                    d="
-                    M13 -7
-                    C8 -20 20 -22 20 -7
-
-                    M30 -7
-                    C25 -20 37 -22 37 -7
-                    "
-                    fill="none"
-                    stroke="#fff3e8"
-                    stroke-width="5"
-                    stroke-linecap="round"
-                />
-
-            </g>
-
-        </svg>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     HALAMAN 4
-===================================================== -->
-
-<section id="s4">
-
-<div class="panel four">
-
-
-    <div class="content">
-
-        <h2>
-            Udah, itu aja.
-        </h2>
-
-
-        <p>
-            Semoga kamu suka.
-        </p>
-
-
-        <p
-            style="
-                margin-top:20px;
-                font-size:16px;
-            "
-        >
-            Tapi...
-        </p>
-
-
-        <!-- =============================================
-             TOMBOL KANGEN
-        ============================================== -->
-
-        <div class="final-buttons">
-
-
-            <button
-                onclick="kangenBiasa()"
-                class="btn-kangen"
-            >
-                🤎 Klik kalau udah kangen
-            </button>
-
-
-            <button
-                onclick="kangenBanget()"
-                class="btn-kangen banget"
-            >
-                🫶 Klik kalau udah kangen banget
-            </button>
-
-
-        </div>
-
-
-        <!-- RESPONSE -->
-
-        <div
-            id="response"
-            class="response"
-        ></div>
-
-
-    </div>
-
-
-    <!-- KAPIBARA FINAL -->
-
-    <div class="capybara capy-four">
-
-        <svg
-            viewBox="0 0 430 350"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-
-            <!-- tanah -->
-
-            <ellipse
-                cx="215"
-                cy="315"
-                rx="190"
-                ry="25"
-                fill="#b9a66f"
-                opacity=".6"
-            />
-
-
-            <!-- badan -->
-
-            <ellipse
-                cx="220"
-                cy="245"
-                rx="135"
-                ry="70"
-                fill="#986747"
-            />
-
-
-            <!-- kepala -->
-
-            <ellipse
-                cx="250"
-                cy="155"
-                rx="82"
-                ry="75"
-                fill="#ad7650"
-            />
-
-
-            <!-- telinga -->
-
-            <circle
-                cx="195"
-                cy="97"
-                r="21"
-                fill="#805536"
-            />
-
-            <circle
-                cx="307"
-                cy="98"
-                r="21"
-                fill="#805536"
-            />
-
-
-            <!-- mata -->
-
-            <circle
-                cx="222"
-                cy="151"
-                r="6"
-                fill="#34261f"
-            />
-
-            <circle
-                cx="278"
-                cy="151"
-                r="6"
-                fill="#34261f"
-            />
-
-
-            <!-- hidung -->
-
-            <ellipse
-                cx="250"
-                cy="180"
-                rx="20"
-                ry="13"
-                fill="#493024"
-            />
-
-
-            <!-- senyum -->
-
-            <path
-                d="
-                M250 190
-                C250 201 241 204 235 201
-
-                M250 190
-                C250 201 259 204 265 201
-                "
-                fill="none"
-                stroke="#493024"
-                stroke-width="3"
-                stroke-linecap="round"
-            />
-
-
-            <!-- kaki -->
-
-            <ellipse
-                cx="135"
-                cy="307"
-                rx="34"
-                ry="18"
-                fill="#7e5437"
-            />
-
-            <ellipse
-                cx="295"
-                cy="307"
-                rx="34"
-                ry="18"
-                fill="#7e5437"
-            />
-
-
-            <!-- tangan -->
-
-            <ellipse
-                cx="145"
-                cy="245"
-                rx="33"
-                ry="14"
-                fill="#8d5d40"
-                transform="rotate(15 145 245)"
-            />
-
-            <ellipse
-                cx="335"
-                cy="245"
-                rx="33"
-                ry="14"
-                fill="#8d5d40"
-                transform="rotate(-15 335 245)"
-            />
-
-        </svg>
-
-    </div>
-
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-        Dibuat dengan ♡ untuk kamu
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     AUDIO
-
-     File ini harus berada di repository yang sama
-     dengan index.html:
-
-     index.html
-     suara.mp3
-===================================================== -->
-
-<audio
-    id="audioKangen"
-    src="suara.mp3"
-    preload="auto"
->
-</audio>
-
-
-
-<script>
-
-
-/* =====================================================
-   PINDAH HALAMAN
-===================================================== */
-
-function go(id){
-
-    document
-        .getElementById(id)
-        .scrollIntoView({
-            behavior:'smooth'
-        });
-
-}
-
-
-
-/* =====================================================
-   TOMBOL "KALAU UDAH KANGEN"
-===================================================== */
-
-function kangenBiasa(){
-
-    const audio =
-        document.getElementById(
-            'audioKangen'
-        );
-
-
-    /*
-       Kalau audio sedang dimainkan,
-       mulai lagi dari awal.
-    */
-
-    audio.currentTime = 0;
-
-
-    audio.play()
-        .then(()=>{
-
-            showResponse(
-                'Hehe... ternyata kangen juga 🤎'
-            );
-
-        })
-        .catch(()=>{
-
-            showResponse(
-                'Coba klik sekali lagi ya 🤎'
-            );
-
-        });
-
-}
-
-
-
-/* =====================================================
-   TOMBOL "KALAU UDAH KANGEN BANGET"
-===================================================== */
-
-function kangenBanget(){
-
-    /*
-       GANTI NOMOR DI BAWAH INI.
-
-       Contoh:
-
-       081234567890
-
-       menjadi:
-
-       6281234567890
-
-       Jangan pakai:
-       +
-       spasi
-       tanda -
-    */
-
-    const nomor =
-        '6285117299097';
-
-
-    /*
-       Pesan otomatis yang muncul
-       di WhatsApp.
-    */
-
-    const pesan =
-        'Kayaknya aku udah kangen banget 😌';
-
-
-    /*
-       Membuat URL WhatsApp
-    */
-
-    const url =
-        'https://wa.me/' +
-        nomor +
-        '?text=' +
-        encodeURIComponent(pesan);
-
-
-    /*
-       Buka WhatsApp
-    */
-
-    window.location.href = url;
-
-}
-
-
-
-/* =====================================================
-   RESPONSE TEXT
-===================================================== */
-
-function showResponse(text){
-
-    const response =
-        document.getElementById(
-            'response'
-        );
-
-
-    response.textContent =
-        text;
-
-
-    response.classList.remove(
-        'show'
-    );
-
-
-    /*
-       Restart animasi
-    */
-
-    void response.offsetWidth;
-
-
-    response.classList.add(
-        'show'
-    );
-
-
-    sparkle();
-
-}
-
-
-
-/* =====================================================
-   SPARKLE
-===================================================== */
-
-function sparkle(){
-
-    const symbols = [
-        '✦',
-        '♡',
-        '✧',
-        '·'
-    ];
-
-
-    for(
-        let i = 0;
-        i < 25;
-        i++
-    ){
-
-        const s =
-            document.createElement(
-                'span'
-            );
-
-
-        s.className =
-            'spark';
-
-
-        s.textContent =
-            symbols[
-                Math.floor(
-                    Math.random() *
-                    symbols.length
-                )
-            ];
-
-
-        s.style.left =
-            '50%';
-
-        s.style.top =
-            '50%';
-
-
-        s.style.fontSize =
-            (
-                14 +
-                Math.random() * 20
-            ) + 'px';
-
-
-        document.body.appendChild(
-            s
-        );
-
-
-        requestAnimationFrame(
-            ()=>{
-
-                s.style.transform =
-                    `translate(
-                        ${Math.random()*360-180}px,
-                        ${Math.random()*360-180}px
-                    )`;
-
-                s.style.opacity =
-                    '0';
-
-            }
-        );
-
-
-        setTimeout(
-            ()=>{
-                s.remove();
-            },
-            1200
-        );
-
-    }
-
-}
-
-</script>
+  </div>
 
 </body>
 </html>
