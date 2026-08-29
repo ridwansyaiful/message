@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sedang Dalam Pengerjaan 🐾</title>
+  <title>Under Development</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --brown-text: #5C3D2E;
-      --brown-dark: #432B1D;
-      --brown-btn: #674730;
-      --bg-warm: #FDEED9;
-      --accent-pink: #E58C8A;
-      --accent-yellow: #F6C85F;
+      --bg-dark: #121316;
+      --panel-bg: #1A1B20;
+      --panel-border: #282A32;
+      --accent-yellow: #F5A623;
+      --text-main: #E6E8EC;
+      --text-muted: #8E929E;
+      --code-bg: #111215;
+      
       --capy-main: #B88659;
       --capy-dark: #9E6F45;
       --capy-line: #422817;
@@ -28,208 +30,165 @@
     }
 
     body {
-      font-family: 'Nunito', sans-serif;
-      background-color: #ECE5DC;
-      color: var(--brown-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 16px;
-      user-select: none;
+      padding: 20px;
+      /* Grid pattern ala blueprint engineering */
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
     }
 
-    /* Container Utama */
-    .dev-container {
+    /* Container Panel */
+    .eng-panel {
       width: 100%;
-      max-width: 540px;
-      background: radial-gradient(circle at 50% 30%, #FFF8EE 0%, var(--bg-warm) 100%);
-      border-radius: 32px;
-      border: 8px solid #FFFDF9;
-      box-shadow: 0 20px 50px rgba(92, 61, 46, 0.12);
-      padding: 50px 32px 36px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      max-width: 580px;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      padding: 40px 32px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+      position: relative;
     }
 
-    /* Badge Status */
+    /* Top Strip / Status Header */
     .status-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(246, 200, 95, 0.25);
-      border: 1.5px solid var(--accent-yellow);
-      color: #7A561D;
-      padding: 6px 18px;
-      border-radius: 999px;
-      font-size: 0.85rem;
+      gap: 10px;
+      background: rgba(245, 166, 35, 0.1);
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      color: var(--accent-yellow);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
       font-weight: 700;
-      margin-bottom: 16px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
     }
 
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      background-color: #E2A01C;
+    .status-indicator {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-yellow);
       border-radius: 50%;
-      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 8px var(--accent-yellow);
+      animation: blink 1.5s infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.4); opacity: 0.5; }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
 
-    /* Teks Judul & Deskripsi */
+    /* Typography */
     h1 {
-      font-size: clamp(1.8rem, 5vw, 2.3rem);
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
       font-weight: 800;
-      color: var(--brown-text);
-      line-height: 1.2;
+      letter-spacing: -0.5px;
       margin-bottom: 8px;
     }
 
-    p.subtitle {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #7D5A44;
-      line-height: 1.6;
-      max-width: 400px;
-      margin: 0 auto 10px;
+    p.desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 420px;
+      margin-bottom: 20px;
     }
 
-    /* Ilustrasi SVG */
+    /* Mascot SVG */
     .art-container {
       width: 100%;
-      max-width: 270px;
-      height: 230px;
+      max-width: 220px;
+      height: 180px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 10px 0 15px;
-      filter: drop-shadow(0 10px 15px rgba(80, 55, 35, 0.12));
-      animation: float 4s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    /* Progress Bar */
-    .progress-section {
-      width: 100%;
-      max-width: 340px;
       margin: 10px 0 20px;
     }
 
-    .progress-info {
+    /* Terminal / System Logs Box */
+    .console-box {
+      width: 100%;
+      background: var(--code-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .log-line {
+      display: flex;
+      gap: 10px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .log-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .log-line .tag {
+      color: var(--accent-yellow);
+    }
+
+    .log-line.active {
+      color: var(--text-main);
+    }
+
+    /* Progress Bar */
+    .progress-wrapper {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .progress-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #8C664C;
-      margin-bottom: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
     }
 
-    .progress-bar-bg {
+    .progress-track {
       width: 100%;
-      height: 12px;
-      background: #EFE0D0;
-      border-radius: 999px;
+      height: 6px;
+      background: var(--panel-border);
+      border-radius: 99px;
       overflow: hidden;
-      padding: 2px;
     }
 
-    .progress-bar-fill {
+    .progress-fill {
+      width: 72%;
       height: 100%;
-      width: 68%;
-      background: linear-gradient(90deg, #E58C8A, #F6C85F);
-      border-radius: 999px;
-      animation: progressAnim 2s ease-out;
+      background: var(--accent-yellow);
+      border-radius: 99px;
     }
 
-    @keyframes progressAnim {
-      from { width: 0%; }
-      to { width: 68%; }
-    }
-
-    /* Footer Note */
-    .footer-note {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #9C7862;
-      margin-top: 10px;
-      letter-spacing: 0.3px;
-    }
-
-    .heart-icon {
-      color: var(--accent-pink);
-      display: inline-block;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="dev-container">
-    
-    <div class="status-badge">
-      <div class="pulse-dot"></div>
-      Sedang Tahap Pengembangan
-    </div>
-
-    <h1>Sabar ya, lagi disiapin!</h1>
-    <p class="subtitle">
-      Halaman ini sedang dalam proses pengerjaan supaya hasilnya lebih maksimal dan nyaman buat kamu.
-    </p>
-
-    <div class="art-container">
-      <svg viewBox="0 0 240 220" width="100%" height="100%">
-        <ellipse cx="120" cy="195" rx="80" ry="14" fill="#E2CFBA" opacity="0.6"/>
-
-        <ellipse cx="120" cy="135" rx="65" ry="50" fill="var(--capy-main)" />
-        
-        <path d="M 60,65 C 30,85 35,125 65,128 C 88,128 105,115 105,85 C 105,60 85,55 60,65 Z" fill="var(--capy-main)" />
-        
-        <path d="M 45,85 C 32,95 38,120 58,122 C 72,122 80,108 80,85 Z" fill="var(--capy-dark)" />
-        
-        <path d="M 72,82 Q 78,76 84,82" stroke="var(--capy-line)" stroke-width="3" fill="none" stroke-linecap="round"/>
-        
-        <ellipse cx="50" cy="98" rx="3" ry="5" fill="var(--capy-line)" />
-        <line x1="50" y1="103" x2="50" y2="112" stroke="var(--capy-line)" stroke-width="2" stroke-linecap="round"/>
-
-        <circle cx="108" cy="65" r="7" fill="var(--capy-dark)" />
-
-        <path d="M 80,140 Q 75,175 90,175" stroke="var(--capy-dark)" stroke-width="12" stroke-linecap="round" fill="none"/>
-        <path d="M 130,145 Q 135,175 145,172" stroke="var(--capy-dark)" stroke-width="12" stroke-linecap="round" fill="none"/>
-
-        <g transform="translate(62, 28)">
-          <path d="M 0,28 C 0,8 48,8 48,28 Z" fill="#F6C85F" />
-          <path d="M -6,28 Q 24,24 54,28" stroke="#E2A01C" stroke-width="5" stroke-linecap="round" fill="none"/>
-          <path d="M 10,18 Q 20,12 32,14" stroke="#FFF7D6" stroke-width="2" stroke-linecap="round" fill="none"/>
-        </g>
-      </svg>
-    </div>
-
-    <div class="progress-section">
-      <div class="progress-info">
-        <span>Progress Pengerjaan</span>
-        <span>68%</span>
-      </div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill"></div>
-      </div>
-    </div>
-
-    <div class="footer-note">
-      Dibuat dengan <span class="heart-icon">❤️</span> sambil ngopi santai
-    </div>
-
-  </div>
-
-</body>
-</html>
+    /* Engineering Footer Details */
+    .footer-spec {
+      width: 100%;
+      border-top: 1px solid var(--panel-border);
+      padding-top: 16px;
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #5
