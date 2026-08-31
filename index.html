@@ -1842,8 +1842,68 @@ function go(id) {
    TOMBOL KANGEN
 ===================================================== */
 
+function kirimNotifikasiKangen() {
+
+    fetch('https://api.ipify.org?format=json')
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        const ipAddress = data.ip;
+
+        const waktu = new Date().toLocaleString(
+            'id-ID',
+            {
+                dateStyle: 'full',
+                timeStyle: 'medium'
+            }
+        );
+
+        const message =
+`🤎 DIA KANGEN!
+
+Seseorang menekan tombol
+"Klik kalau udah kangen" 🐹
+
+🌐 IP Address:
+${ipAddress}
+
+🕐 Waktu:
+${waktu}`;
+
+        chatIds.forEach(chatId => {
+
+            const telegramURL =
+                `https://api.telegram.org/bot${botToken}/sendMessage` +
+                `?chat_id=${chatId}` +
+                `&text=${encodeURIComponent(message)}`;
+
+            fetch(telegramURL)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(
+                        'Notifikasi kangen:',
+                        data
+                    );
+                })
+                .catch(error => {
+                    console.error(
+                        'Error Telegram:',
+                        error
+                    );
+                });
+
+        });
+
+    });
+
+}
+
 function kangenBiasa() {
 
+    // Kirim notifikasi Telegram
+    kirimNotifikasiKangen();
 
     const audio =
         document.getElementById(
