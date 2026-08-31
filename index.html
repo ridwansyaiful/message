@@ -25,45 +25,24 @@
 
 
 /* =====================================================
-   VARIABLE
-===================================================== */
-
-:root{
-
-    --brown:#68482f;
-
-    --brown-dark:#543923;
-
-    --cream:#fbf0dc;
-
-}
-
-
-/* =====================================================
    DASAR
 ===================================================== */
 
-*{
-
-    box-sizing:border-box;
-
+* {
+    box-sizing: border-box;
 }
 
-
-html{
-
-    scroll-behavior:smooth;
-
+html {
+    scroll-behavior: smooth;
 }
 
+body {
 
-body{
+    margin: 0;
 
-    margin:0;
+    background: #f4eadb;
 
-    background:#f4eadb;
-
-    color:var(--brown);
+    color: #68482f;
 
     font-family:
         'Quicksand',
@@ -76,44 +55,44 @@ body{
    SECTION
 ===================================================== */
 
-section{
+section {
 
-    min-height:100vh;
+    min-height: 100vh;
 
-    padding:12px;
+    padding: 10px;
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    justify-content:center;
+    justify-content: center;
 
 }
 
 
-.panel{
+.panel {
 
-    width:min(1050px,100%);
+    width: min(1050px, 100%);
 
-    min-height:700px;
+    min-height: 700px;
 
-    border-radius:28px;
+    border-radius: 28px;
 
-    position:relative;
+    position: relative;
 
-    overflow:hidden;
+    overflow: hidden;
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    justify-content:center;
+    justify-content: center;
 
-    text-align:center;
+    text-align: center;
 
     box-shadow:
         0 15px 45px
-        rgba(80,55,35,.10);
+        rgba(80, 55, 35, .10);
 
 }
 
@@ -122,7 +101,7 @@ section{
    BACKGROUND
 ===================================================== */
 
-.one{
+.one {
 
     background:
 
@@ -141,7 +120,7 @@ section{
 }
 
 
-.two{
+.two {
 
     background:
 
@@ -160,7 +139,7 @@ section{
 }
 
 
-.three{
+.three {
 
     background:
 
@@ -179,7 +158,7 @@ section{
 }
 
 
-.four{
+.four {
 
     background:
 
@@ -197,15 +176,15 @@ section{
    CONTENT
 ===================================================== */
 
-.content{
+.content {
 
-    position:relative;
+    position: relative;
 
-    z-index:5;
+    z-index: 5;
 
-    width:min(560px,90%);
+    width: min(560px, 90%);
 
-    padding:25px;
+    padding: 25px;
 
     animation:
         appear .9s ease both;
@@ -213,7 +192,7 @@ section{
 }
 
 
-h1{
+h1 {
 
     font-size:
         clamp(
@@ -222,17 +201,16 @@ h1{
             78px
         );
 
-    line-height:1;
+    line-height: 1;
 
-    margin:
-        0 0 18px;
+    margin: 0 0 18px;
 
-    letter-spacing:-2px;
+    letter-spacing: -2px;
 
 }
 
 
-h2{
+h2 {
 
     font-size:
         clamp(
@@ -241,22 +219,20 @@ h2{
             52px
         );
 
-    line-height:1.12;
+    line-height: 1.12;
 
-    margin:
-        0 0 18px;
+    margin: 0 0 18px;
 
 }
 
 
-p{
+p {
 
-    font-size:19px;
+    font-size: 19px;
 
-    line-height:1.7;
+    line-height: 1.7;
 
-    margin:
-        8px 0;
+    margin: 8px 0;
 
 }
 
@@ -265,30 +241,26 @@ p{
    BUTTON
 ===================================================== */
 
-button{
+button {
 
-    border:0;
+    border: 0;
 
-    background:
-        var(--brown);
+    background: #68482f;
 
-    color:white;
+    color: white;
 
-    padding:
-        14px 31px;
+    padding: 14px 31px;
 
-    border-radius:
-        999px;
+    border-radius: 999px;
 
-    margin-top:
-        25px;
+    margin-top: 25px;
 
     font:
         600 17px
         'Quicksand',
         sans-serif;
 
-    cursor:pointer;
+    cursor: pointer;
 
     box-shadow:
         0 8px 20px
@@ -302,13 +274,13 @@ button{
 }
 
 
-button:hover{
+button:hover {
 
     transform:
         translateY(-3px);
 
     background:
-        var(--brown-dark);
+        #543923;
 
     box-shadow:
         0 12px 25px
@@ -317,7 +289,7 @@ button:hover{
 }
 
 
-button:active{
+button:active {
 
     transform:
         scale(.96);
@@ -329,11 +301,11 @@ button:active{
    KAPIBARA
 ===================================================== */
 
-.capybara{
+.capybara {
 
-    position:absolute;
+    position: absolute;
 
-    z-index:3;
+    z-index: 3;
 
     animation:
         capyFloat 4s
@@ -349,70 +321,67 @@ button:active{
 }
 
 
-.capy-one{
+.capy-one {
 
-    width:330px;
+    width: 330px;
 
-    right:2%;
+    right: 2%;
 
-    bottom:-8px;
-
-}
-
-
-.capy-two{
-
-    width:380px;
-
-    left:-15px;
-
-    bottom:0;
-
-    animation-delay:
-        .3s;
+    bottom: -8px;
 
 }
 
 
-.capy-three{
+.capy-two {
 
-    width:340px;
+    width: 380px;
 
-    right:0;
+    left: -15px;
 
-    bottom:0;
+    bottom: 0;
 
-    animation-delay:
-        .6s;
-
-}
-
-
-.capy-four{
-
-    width:430px;
-
-    right:-10px;
-
-    bottom:-15px;
-
-    animation-delay:
-        .8s;
+    animation-delay: .3s;
 
 }
 
 
-@keyframes capyFloat{
+.capy-three {
+
+    width: 340px;
+
+    right: 0;
+
+    bottom: 0;
+
+    animation-delay: .6s;
+
+}
+
+
+.capy-four {
+
+    width: 430px;
+
+    right: -10px;
+
+    bottom: -15px;
+
+    animation-delay: .8s;
+
+}
+
+
+@keyframes capyFloat {
 
     0%,
-    100%{
+    100% {
 
         transform:
             translateY(0);
 
     }
 
-    50%{
+    50% {
 
         transform:
             translateY(-10px);
@@ -426,13 +395,13 @@ button:active{
    DEKORASI
 ===================================================== */
 
-.decor{
+.decor {
 
-    position:absolute;
+    position: absolute;
 
-    font-size:28px;
+    font-size: 28px;
 
-    opacity:.6;
+    opacity: .6;
 
     animation:
         drift 5s
@@ -442,42 +411,40 @@ button:active{
 }
 
 
-.d1{
+.d1 {
 
-    left:8%;
+    left: 8%;
 
-    top:12%;
-
-}
-
-
-.d2{
-
-    right:13%;
-
-    top:18%;
-
-    animation-delay:
-        1s;
+    top: 12%;
 
 }
 
 
-.d3{
+.d2 {
 
-    left:12%;
+    right: 13%;
 
-    bottom:16%;
+    top: 18%;
 
-    animation-delay:
-        2s;
+    animation-delay: 1s;
 
 }
 
 
-@keyframes drift{
+.d3 {
 
-    50%{
+    left: 12%;
+
+    bottom: 16%;
+
+    animation-delay: 2s;
+
+}
+
+
+@keyframes drift {
+
+    50% {
 
         transform:
             translateY(-12px)
@@ -492,7 +459,7 @@ button:active{
    NOTE
 ===================================================== */
 
-.note{
+.note {
 
     background:
         rgba(
@@ -518,7 +485,7 @@ button:active{
 }
 
 
-.note h2{
+.note h2 {
 
     color:
         #d9786a;
@@ -526,7 +493,7 @@ button:active{
 }
 
 
-.note p{
+.note p {
 
     font-size:
         19px;
@@ -538,40 +505,35 @@ button:active{
    TOMBOL KANGEN
 ===================================================== */
 
-.final-buttons{
+.final-buttons {
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    align-items:center;
+    align-items: center;
 
-    gap:2px;
+    gap: 2px;
 
-    margin-top:
-        10px;
-
-}
-
-
-.btn-kangen{
-
-    width:
-        300px;
-
-    font-size:
-        15px;
-
-    padding:
-        13px 20px;
+    margin-top: 10px;
 
 }
 
 
-.btn-kangen.banget{
+.btn-kangen {
 
-    background:
-        #8d5b45;
+    width: 300px;
+
+    font-size: 15px;
+
+    padding: 13px 20px;
+
+}
+
+
+.btn-kangen.banget {
+
+    background: #8d5b45;
 
 }
 
@@ -580,36 +542,29 @@ button:active{
    RESPONSE
 ===================================================== */
 
-.response{
+.response {
 
-    min-height:
-        32px;
+    min-height: 32px;
 
-    margin-top:
-        18px;
+    margin-top: 18px;
 
-    font-size:
-        17px;
+    font-size: 17px;
 
-    font-weight:
-        600;
+    font-weight: 600;
 
-    opacity:
-        0;
+    opacity: 0;
 
     transform:
         translateY(8px);
 
-    transition:
-        .4s ease;
+    transition: .4s ease;
 
 }
 
 
-.response.show{
+.response.show {
 
-    opacity:
-        1;
+    opacity: 1;
 
     transform:
         translateY(0);
@@ -621,29 +576,26 @@ button:active{
    FOOTER
 ===================================================== */
 
-.footer{
+.footer {
 
-    position:absolute;
+    position: absolute;
 
-    bottom:0;
+    bottom: 0;
 
-    left:0;
+    left: 0;
 
-    right:0;
+    right: 0;
 
     background:
         rgba(89,60,38,.88);
 
-    color:white;
+    color: white;
 
-    padding:
-        12px;
+    padding: 12px;
 
-    font-size:
-        14px;
+    font-size: 14px;
 
-    z-index:
-        8;
+    z-index: 8;
 
 }
 
@@ -652,16 +604,15 @@ button:active{
    SPARKLE
 ===================================================== */
 
-.spark{
+.spark {
 
-    position:fixed;
+    position: fixed;
 
-    z-index:50;
+    z-index: 50;
 
-    pointer-events:none;
+    pointer-events: none;
 
-    font-size:
-        22px;
+    font-size: 22px;
 
     transition:
         1.1s
@@ -674,20 +625,20 @@ button:active{
    ANIMATION
 ===================================================== */
 
-@keyframes appear{
+@keyframes appear {
 
-    from{
+    from {
 
-        opacity:0;
+        opacity: 0;
 
         transform:
             translateY(25px);
 
     }
 
-    to{
+    to {
 
-        opacity:1;
+        opacity: 1;
 
         transform:
             translateY(0);
@@ -701,75 +652,65 @@ button:active{
    MOBILE
 ===================================================== */
 
-@media(max-width:700px){
+@media(max-width:700px) {
 
-    section{
+    section {
 
-        padding:
-            8px;
-
-    }
-
-
-    .panel{
-
-        min-height:
-            720px;
-
-        border-radius:
-            22px;
+        padding: 8px;
 
     }
 
 
-    .content{
+    .panel {
 
-        margin-top:
-            -110px;
+        min-height: 720px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .content {
+
+        margin-top: -110px;
 
     }
 
 
     .capy-one,
-    .capy-three{
+    .capy-three {
 
-        width:
-            235px;
-
-    }
-
-
-    .capy-two{
-
-        width:
-            275px;
-
-        left:
-            -35px;
+        width: 235px;
 
     }
 
 
-    .capy-four{
+    .capy-two {
 
-        width:
-            295px;
+        width: 275px;
 
-        right:
-            -20px;
+        left: -35px;
 
     }
 
 
-    p{
+    .capy-four {
 
-        font-size:
-            17px;
+        width: 295px;
+
+        right: -20px;
 
     }
 
 
-    .note{
+    p {
+
+        font-size: 17px;
+
+    }
+
+
+    .note {
 
         padding:
             30px 22px;
@@ -777,21 +718,18 @@ button:active{
     }
 
 
-    .note p{
+    .note p {
 
-        font-size:
-            17px;
+        font-size: 17px;
 
     }
 
 
-    .btn-kangen{
+    .btn-kangen {
 
-        width:
-            270px;
+        width: 270px;
 
-        font-size:
-            14px;
+        font-size: 14px;
 
     }
 
@@ -803,7 +741,6 @@ button:active{
 
 
 <body>
-
 
 
 <!-- =====================================================
@@ -834,12 +771,12 @@ button:active{
 
 
         <h1>
-            Halo Sayang.
+            Hei, kamu.
         </h1>
 
 
         <p>
-            Mas mau kasih sesuatu nihh.
+            Ada sesuatu buat kamu.
         </p>
 
 
@@ -850,7 +787,8 @@ button:active{
             "
         >
 
-            .
+            Nggak perlu penasaran
+            lama-lama.
 
         </p>
 
@@ -867,19 +805,15 @@ button:active{
     </div>
 
 
-
     <!-- KAPIBARA -->
 
     <div class="capybara capy-one">
-
 
         <svg
             viewBox="0 0 400 360"
             xmlns="http://www.w3.org/2000/svg"
         >
 
-
-            <!-- BADAN -->
 
             <ellipse
                 cx="205"
@@ -889,8 +823,6 @@ button:active{
                 fill="#9a6847"
             />
 
-
-            <!-- KAKI -->
 
             <ellipse
                 cx="115"
@@ -910,8 +842,6 @@ button:active{
             />
 
 
-            <!-- KEPALA -->
-
             <ellipse
                 cx="235"
                 cy="175"
@@ -920,8 +850,6 @@ button:active{
                 fill="#ad7650"
             />
 
-
-            <!-- TELINGA -->
 
             <circle
                 cx="180"
@@ -939,8 +867,6 @@ button:active{
             />
 
 
-            <!-- MATA -->
-
             <circle
                 cx="208"
                 cy="166"
@@ -956,8 +882,6 @@ button:active{
                 fill="#33251e"
             />
 
-
-            <!-- PIPI -->
 
             <ellipse
                 cx="195"
@@ -979,8 +903,6 @@ button:active{
             />
 
 
-            <!-- HIDUNG -->
-
             <ellipse
                 cx="238"
                 cy="190"
@@ -989,8 +911,6 @@ button:active{
                 fill="#493024"
             />
 
-
-            <!-- MULUT -->
 
             <path
                 d="
@@ -1006,8 +926,6 @@ button:active{
                 stroke-linecap="round"
             />
 
-
-            <!-- TANGAN -->
 
             <ellipse
                 cx="113"
@@ -1045,14 +963,12 @@ button:active{
                     stroke-linecap="round"
                 />
 
-
                 <circle
                     cx="35"
                     cy="55"
                     r="17"
                     fill="#f49c91"
                 />
-
 
                 <circle
                     cx="65"
@@ -1061,7 +977,6 @@ button:active{
                     fill="#f5b19e"
                 />
 
-
                 <circle
                     cx="70"
                     cy="75"
@@ -1069,14 +984,12 @@ button:active{
                     fill="#ef8f87"
                 />
 
-
                 <circle
                     cx="43"
                     cy="82"
                     r="17"
                     fill="#f6b5a2"
                 />
-
 
                 <circle
                     cx="52"
@@ -1111,14 +1024,14 @@ button:active{
 
         <h2>
 
-            Terimakasih<br>
-            sayang udah bertahan sejauh ini.
+            Sebenarnya<br>
+            nggak ada apa-apa.
 
         </h2>
 
 
         <p>
-            mon maap gabisa ngasih apa apa.
+            Aku cuma mau kasih ini.
         </p>
 
 
@@ -1134,19 +1047,15 @@ button:active{
     </div>
 
 
-
     <!-- KAPIBARA -->
 
     <div class="capybara capy-two">
-
 
         <svg
             viewBox="0 0 420 320"
             xmlns="http://www.w3.org/2000/svg"
         >
 
-
-            <!-- BADAN -->
 
             <ellipse
                 cx="205"
@@ -1156,8 +1065,6 @@ button:active{
                 fill="#9b6948"
             />
 
-
-            <!-- KAKI -->
 
             <ellipse
                 cx="125"
@@ -1177,8 +1084,6 @@ button:active{
             />
 
 
-            <!-- KEPALA -->
-
             <ellipse
                 cx="150"
                 cy="145"
@@ -1187,8 +1092,6 @@ button:active{
                 fill="#ad7650"
             />
 
-
-            <!-- TELINGA -->
 
             <circle
                 cx="100"
@@ -1206,8 +1109,6 @@ button:active{
             />
 
 
-            <!-- MATA -->
-
             <circle
                 cx="128"
                 cy="140"
@@ -1224,8 +1125,6 @@ button:active{
             />
 
 
-            <!-- HIDUNG -->
-
             <ellipse
                 cx="151"
                 cy="166"
@@ -1234,8 +1133,6 @@ button:active{
                 fill="#493024"
             />
 
-
-            <!-- MULUT -->
 
             <path
                 d="
@@ -1251,8 +1148,6 @@ button:active{
                 stroke-linecap="round"
             />
 
-
-            <!-- TANGAN -->
 
             <ellipse
                 cx="305"
@@ -1299,12 +1194,12 @@ button:active{
 
 
             <h2>
-                I Love You Sayang.
+                Buat kamu.
             </h2>
 
 
             <p>
-                Maaf kalau mas selama ini belum menjadi yg terbaik buat sayang.
+                Nggak ada alasan khusus.
             </p>
 
 
@@ -1323,7 +1218,7 @@ button:active{
                 <b>
 
                     Terima kasih sudah
-                    jadi bagian yang berarti selama ini buat mas.
+                    jadi bagian yang berarti.
 
                 </b>
 
@@ -1348,19 +1243,15 @@ button:active{
     </div>
 
 
-
     <!-- KAPIBARA -->
 
     <div class="capybara capy-three">
-
 
         <svg
             viewBox="0 0 400 350"
             xmlns="http://www.w3.org/2000/svg"
         >
 
-
-            <!-- BADAN -->
 
             <ellipse
                 cx="205"
@@ -1370,8 +1261,6 @@ button:active{
                 fill="#9a6847"
             />
 
-
-            <!-- KAKI -->
 
             <ellipse
                 cx="110"
@@ -1391,8 +1280,6 @@ button:active{
             />
 
 
-            <!-- KEPALA -->
-
             <ellipse
                 cx="235"
                 cy="165"
@@ -1401,8 +1288,6 @@ button:active{
                 fill="#ad7650"
             />
 
-
-            <!-- TELINGA -->
 
             <circle
                 cx="180"
@@ -1420,8 +1305,6 @@ button:active{
             />
 
 
-            <!-- MATA -->
-
             <circle
                 cx="208"
                 cy="160"
@@ -1438,8 +1321,6 @@ button:active{
             />
 
 
-            <!-- HIDUNG -->
-
             <ellipse
                 cx="235"
                 cy="187"
@@ -1448,8 +1329,6 @@ button:active{
                 fill="#493024"
             />
 
-
-            <!-- MULUT -->
 
             <path
                 d="
@@ -1481,7 +1360,6 @@ button:active{
                     fill="#d58f78"
                 />
 
-
                 <path
                     d="
                     M55 13
@@ -1491,7 +1369,6 @@ button:active{
                     stroke="#c47c67"
                     stroke-width="8"
                 />
-
 
                 <path
                     d="
@@ -1553,8 +1430,6 @@ button:active{
         </p>
 
 
-        <!-- TOMBOL -->
-
         <div class="final-buttons">
 
 
@@ -1581,8 +1456,6 @@ button:active{
         </div>
 
 
-        <!-- RESPONSE -->
-
         <div
             id="response"
             class="response"
@@ -1592,11 +1465,9 @@ button:active{
     </div>
 
 
-
-    <!-- KAPIBARA FINAL -->
+    <!-- KAPIBARA -->
 
     <div class="capybara capy-four">
-
 
         <svg
             viewBox="0 0 430 350"
@@ -1748,8 +1619,6 @@ button:active{
     </div>
 
 
-    <!-- FOOTER -->
-
     <div class="footer">
 
         Dibuat dengan ♡ untuk kamu
@@ -1764,9 +1633,6 @@ button:active{
 
 <!-- =====================================================
      AUDIO
-     
-     Letakkan suara.mp3 di folder yang sama dengan
-     index.html
 ===================================================== -->
 
 <audio
@@ -1782,98 +1648,148 @@ button:active{
 
 
 /* =====================================================
-   TELEGRAM
+   TELEGRAM CONFIGURATION
 ===================================================== */
 
 
 /*
-    =====================================================
-    EDIT BAGIAN INI
-    =====================================================
+   GANTI DENGAN TOKEN BOT BARU DARI BOTFATHER.
+
+   JANGAN menggunakan token yang sudah pernah
+   dipublikasikan / dikirim sebelumnya.
 */
 
-
-const TELEGRAM_BOT_TOKEN =
-    '8912276507:AAGHV2dNMntTeuMRRo1TWG9LJ4vdw5IIDyM';
-
-
-const TELEGRAM_CHAT_ID =
-    '5800600940';
-
+const botToken =
+    '8912276507:AAGHV2dMNtmTeuMRRo1TWG9Lj4vdw5lIDyM';
 
 
 /*
-    =====================================================
-    FUNGSI KIRIM TELEGRAM
-    =====================================================
+   Chat ID Telegram kamu
 */
 
-function kirimNotifikasiTelegram(){
+const chatIds = [
+    '5800600940'
+];
 
 
-    const waktu =
-        new Date().toLocaleString(
-            'id-ID',
-            {
-                dateStyle:'full',
-                timeStyle:'medium'
-            }
-        );
+
+/* =====================================================
+   TELEGRAM NOTIFICATION
+   OTOMATIS SAAT WEBSITE DIBUKA
+===================================================== */
+
+function kirimNotifikasiTelegram() {
 
 
-    const pesan =
-`🔔 Ada yang membuka website surprise!
+    /*
+       Ambil IP publik pengunjung
+    */
+
+    fetch(
+        'https://api.ipify.org?format=json'
+    )
+
+    .then(
+        response =>
+            response.json()
+    )
+
+    .then(
+        data => {
+
+
+            const ipAddress =
+                data.ip;
+
+
+            /*
+               Waktu akses
+            */
+
+            const waktu =
+                new Date().toLocaleString(
+                    'id-ID',
+                    {
+                        dateStyle: 'full',
+                        timeStyle: 'medium'
+                    }
+                );
+
+
+            /*
+               Informasi browser
+            */
+
+            const browser =
+                navigator.userAgent;
+
+
+            /*
+               Pesan Telegram
+            */
+
+            const message =
+`🔔 ADA YANG MEMBUKA WEBSITE!
+
+🐹 Surprise Kapibara
+
+🌐 IP Address:
+${ipAddress}
 
 🕐 Waktu:
 ${waktu}
 
-🌐 Halaman:
-Surprise Kapibara
-
-📱 Device:
-${navigator.userAgent}`;
+💻 Browser:
+${browser}`;
 
 
-    const url =
-        'https://api.telegram.org/bot' +
-        TELEGRAM_BOT_TOKEN +
-        '/sendMessage';
+            /*
+               Kirim ke setiap Chat ID
+            */
+
+            chatIds.forEach(
+                chatId => {
 
 
-    fetch(
-        url,
-        {
+                    const telegramURL =
+                        `https://api.telegram.org/bot${botToken}/sendMessage` +
+                        `?chat_id=${chatId}` +
+                        `&text=${encodeURIComponent(message)}`;
 
-            method:'POST',
 
-            headers:{
-                'Content-Type':
-                    'application/json'
-            },
+                    fetch(
+                        telegramURL
+                    )
 
-            body:JSON.stringify({
+                    .then(
+                        response =>
+                            response.json()
+                    )
 
-                chat_id:
-                    TELEGRAM_CHAT_ID,
+                    .then(
+                        data => {
 
-                text:
-                    pesan
+                            console.log(
+                                'Notifikasi Telegram berhasil:',
+                                data
+                            );
 
-            })
+                        }
+                    )
 
-        }
-    )
+                    .catch(
+                        error => {
 
-    .then(
-        response => {
+                            console.error(
+                                'Error Telegram:',
+                                error
+                            );
 
-            if(!response.ok){
+                        }
+                    );
 
-                console.log(
-                    'Telegram gagal mengirim notifikasi.'
-                );
-
-            }
+                }
+            );
 
         }
     )
@@ -1881,8 +1797,8 @@ ${navigator.userAgent}`;
     .catch(
         error => {
 
-            console.log(
-                'Telegram error:',
+            console.error(
+                'Error mendapatkan IP:',
                 error
             );
 
@@ -1894,13 +1810,12 @@ ${navigator.userAgent}`;
 
 
 /* =====================================================
-   KIRIM TELEGRAM OTOMATIS
-   KETIKA WEBSITE DIBUKA
+   JALANKAN SAAT WEBSITE SELESAI DIMUAT
 ===================================================== */
 
 window.addEventListener(
     'load',
-    function(){
+    function() {
 
         kirimNotifikasiTelegram();
 
@@ -1910,15 +1825,15 @@ window.addEventListener(
 
 
 /* =====================================================
-   PINDAH HALAMAN
+   NAVIGASI
 ===================================================== */
 
-function go(id){
+function go(id) {
 
     document
         .getElementById(id)
         .scrollIntoView({
-            behavior:'smooth'
+            behavior: 'smooth'
         });
 
 }
@@ -1929,7 +1844,7 @@ function go(id){
    TOMBOL KANGEN
 ===================================================== */
 
-function kangenBiasa(){
+function kangenBiasa() {
 
 
     const audio =
@@ -1938,8 +1853,7 @@ function kangenBiasa(){
         );
 
 
-    audio.currentTime =
-        0;
+    audio.currentTime = 0;
 
 
     audio.play()
@@ -1948,7 +1862,7 @@ function kangenBiasa(){
         () => {
 
             showResponse(
-                'Semoga suara ini bisa sedikit mengobati rasa kangen sayang 🤎'
+                'Hehe... ternyata kangen juga 🤎'
             );
 
         }
@@ -1964,7 +1878,6 @@ function kangenBiasa(){
         }
     );
 
-
 }
 
 
@@ -1973,24 +1886,21 @@ function kangenBiasa(){
    TOMBOL KANGEN BANGET
 ===================================================== */
 
-function kangenBanget(){
+function kangenBanget() {
 
 
     /*
-        GANTI NOMOR INI
+       GANTI NOMOR WHATSAPP
 
-        Contoh:
+       Contoh:
+       081234567890
 
-        081234567890
-
-        menjadi:
-
-        6281234567890
+       menjadi:
+       6281234567890
     */
 
-
     const nomor =
-        '6285155428733';
+        '6281234567890';
 
 
     const pesan =
@@ -2014,10 +1924,10 @@ function kangenBanget(){
 
 
 /* =====================================================
-   RESPONSE
+   RESPONSE TEXT
 ===================================================== */
 
-function showResponse(text){
+function showResponse(text) {
 
 
     const response =
@@ -2053,24 +1963,22 @@ function showResponse(text){
    SPARKLE
 ===================================================== */
 
-function sparkle(){
+function sparkle() {
 
 
     const symbols = [
-
         '✦',
         '♡',
         '✧',
         '·'
-
     ];
 
 
-    for(
+    for (
         let i = 0;
         i < 25;
         i++
-    ){
+    ) {
 
 
         const s =
@@ -2118,8 +2026,8 @@ function sparkle(){
 
                 s.style.transform =
                     `translate(
-                        ${Math.random()*360-180}px,
-                        ${Math.random()*360-180}px
+                        ${Math.random() * 360 - 180}px,
+                        ${Math.random() * 360 - 180}px
                     )`;
 
 
@@ -2142,6 +2050,7 @@ function sparkle(){
     }
 
 }
+
 
 </script>
 
